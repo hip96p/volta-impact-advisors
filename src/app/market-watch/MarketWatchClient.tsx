@@ -61,7 +61,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
       <section className="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-40 right-10 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-0 -left-10 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10 pt-36 pb-24">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
@@ -89,7 +89,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
 
       {/* Data Dashboard */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <div className="flex items-center gap-3 mb-3">
               <BarChart3 size={18} className="text-green" />
@@ -126,7 +126,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
 
       {/* News Feed */}
       <section className="bg-cream-light">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <div className="flex items-center gap-3 mb-3">
               <Rss size={18} className="text-green" />
@@ -182,7 +182,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
 
       {/* Data Sources — no CTA */}
       <section className="bg-white !py-16">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="font-heading font-bold text-charcoal text-sm mb-2">Data Sources</h3>

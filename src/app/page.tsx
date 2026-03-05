@@ -16,10 +16,10 @@ const rotatingWords = [
 ];
 
 const segments = [
-  { title: 'Banks & Financial Institutions', desc: 'PRB implementation, IFRS S1/S2, green bond frameworks, climate finance mobilization, ESG risk integration and stress testing.', href: '/services#banks' },
-  { title: 'Investors & Asset Managers', desc: 'Impact measurement and reporting, ESG due diligence for PE/VC, portfolio integration, SDG alignment, and carbon footprinting.', href: '/services#investors' },
-  { title: 'Governments & Public Sector', desc: 'National climate strategy, green taxonomy development, carbon market design, just transition planning, and climate finance readiness.', href: '/services#governments' },
-  { title: 'Development Finance', desc: 'Environmental and social impact assessment, performance standards implementation, resettlement planning, and independent evaluations.', href: '/services#development-finance' },
+  { title: 'Banks & Financial Institutions', desc: 'You need more than a checklist — you need ESG embedded into how your bank actually operates. From PRB reporting to climate risk stress testing, we help you stay ahead of regulators, access new markets, and turn sustainability into a genuine competitive advantage.', href: '/services#banks' },
+  { title: 'Investors & Asset Managers', desc: 'Your LPs and stakeholders want to see impact — not just returns. We help you build credible impact measurement frameworks, integrate ESG across your portfolio, and report with confidence so you can raise your next fund on a track record that stands up to scrutiny.', href: '/services#investors' },
+  { title: 'Governments & Public Sector', desc: 'You set the rules and the direction. We help you design national climate strategies, develop green taxonomies, and build the institutional readiness to unlock international climate finance — so your ambitions translate into real programs on the ground.', href: '/services#governments' },
+  { title: 'Development Finance', desc: 'Your investments need to meet the highest environmental and social standards — without slowing you down. We provide end-to-end E&S advisory, from pre-investment due diligence to independent evaluations, so you can deploy capital with confidence.', href: '/services#development-finance' },
 ];
 
 const caseStudies = [
@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10 pt-36 pb-24">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
@@ -87,8 +87,19 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
+          <FadeIn delay={0.8}>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link href="/services" className="bg-green text-white px-7 py-3 rounded-md text-sm font-medium font-body hover:bg-green-light transition-all inline-flex items-center gap-2">
+                Our Services <ArrowRight size={15} />
+              </Link>
+              <Link href="/contact" className="bg-white/10 text-white border border-white/20 px-7 py-3 rounded-md text-sm font-medium font-body hover:bg-white/20 transition-all">
+                Start a Conversation
+              </Link>
+            </div>
+          </FadeIn>
+
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-28 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20 pt-12 border-t border-white/10">
             {[
               { target: 40, suffix: '+', label: 'Services' },
               { target: 15, suffix: '+', label: 'Frameworks' },
@@ -110,7 +121,7 @@ export default function HomePage() {
 
       {/* ── LOGO TICKER ── */}
       <section className="bg-cream-light !py-12">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <p className="text-center text-[12px] text-charcoal tracking-[0.15em] uppercase mb-6 font-body font-semibold">Our team has worked with</p>
           <div className="overflow-hidden">
             <div className="flex gap-16 items-center animate-scroll">
@@ -124,7 +135,7 @@ export default function HomePage() {
 
       {/* ── WHO WE SERVE ── */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Who We Serve</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-8 max-w-lg leading-tight">
@@ -153,7 +164,7 @@ export default function HomePage() {
 
       {/* ── WHY US ── */}
       <section className="bg-cream-light">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Why Us</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-8 leading-tight max-w-lg">
@@ -184,7 +195,7 @@ export default function HomePage() {
 
       {/* ── CASE STUDIES ── */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Selected Work</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-16 max-w-lg leading-tight">
@@ -212,7 +223,7 @@ export default function HomePage() {
       {/* ── READY TO START — Contact Form ── */}
       <section className="bg-charcoal relative overflow-hidden">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
               <div>
