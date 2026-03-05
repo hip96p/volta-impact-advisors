@@ -11,7 +11,8 @@
   --via-teal: #0078A1;
   --via-emerald: #2D8B5E;
   --via-sand: #F5F0EB;
-  --via-cream: #FAF8F5;
+  --via-cream: #E7EBC5;
+  --via-cream-light: #F4F6E8;
   --via-white: #FFFFFF;
   --via-charcoal: #37515F;
   --via-sunglow: #FFCA3A;
@@ -31,6 +32,7 @@
   --color-emerald: var(--via-emerald);
   --color-sand: var(--via-sand);
   --color-cream: var(--via-cream);
+  --color-cream-light: var(--via-cream-light);
   --color-charcoal: var(--via-charcoal);
   --color-sunglow: var(--via-sunglow);
   --font-heading: 'Archivo', -apple-system, system-ui, sans-serif;
@@ -38,7 +40,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font-body); color: #2D3E4A; background: var(--via-white); -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--via-charcoal); background: var(--via-white); -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 html { scroll-behavior: smooth; }
 
@@ -50,30 +52,23 @@ html { scroll-behavior: smooth; }
 .gradient-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
+  filter: blur(100px);
+  opacity: 0.08;
   pointer-events: none;
-}
-
-/* Subtle grid bg */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(9,129,74,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(9,129,74,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
 }
 
 /* Glass card — used on Market Watch */
 .glass-card {
-  background: rgba(255,255,255,0.95);
+  background: #fff;
   border: 1px solid #E5E7EB;
-  border-radius: 16px;
+  border-radius: 12px;
   transition: all 0.3s ease;
 }
 .glass-card:hover {
   border-color: rgba(9,129,74,0.2);
+  box-shadow: 0 8px 32px rgba(9,129,74,0.06);
 }
 
-/* Section spacing — generous whitespace */
-section { padding: 120px 0; }
-@media (max-width: 768px) { section { padding: 72px 0; } }
+/* Section spacing — generous */
+section { padding: 96px 0; }
+@media (max-width: 768px) { section { padding: 64px 0; } }

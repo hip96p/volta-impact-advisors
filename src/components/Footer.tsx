@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-midnight text-white/50 py-16">
-      <div className="max-w-5xl mx-auto px-6">
+    <footer className="bg-charcoal text-white/40 py-16">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-green flex items-center justify-center">
+              <div className="w-7 h-7 rounded-md bg-green flex items-center justify-center">
                 <span className="text-white font-extrabold text-[9px] font-heading">VIA</span>
               </div>
               <span className="text-white font-semibold text-sm font-heading">Volta Impact</span>
@@ -23,7 +23,7 @@ export default function Footer() {
               <Link href="/services#banks" className="hover:text-white transition">Banks</Link>
               <Link href="/services#investors" className="hover:text-white transition">Investors</Link>
               <Link href="/services#governments" className="hover:text-white transition">Governments</Link>
-              <Link href="/services#dfis" className="hover:text-white transition">DFIs</Link>
+              <Link href="/services#development-finance" className="hover:text-white transition">Development Finance</Link>
             </div>
           </div>
 

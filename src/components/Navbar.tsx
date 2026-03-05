@@ -29,19 +29,19 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-white/95 backdrop-blur-xl shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-16 md:h-[76px]">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${
-              scrolled ? 'bg-green' : 'bg-white/15 border border-white/20'
+            <div className={`w-8 h-8 rounded-md flex items-center justify-center transition-all duration-500 ${
+              scrolled ? 'bg-green' : 'bg-green'
             }`}>
               <span className="text-white font-extrabold text-[10px] font-heading tracking-tight">VIA</span>
             </div>
             <span className={`font-semibold text-sm tracking-tight font-heading transition-colors duration-500 ${
-              scrolled ? 'text-navy' : 'text-white'
+              scrolled ? 'text-charcoal' : 'text-white'
             }`}>
               Volta Impact Advisors
             </span>
@@ -61,14 +61,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="bg-green text-white px-5 py-2 rounded-full text-[13px] font-medium font-body hover:bg-green-light transition-colors">
+            <Link href="/contact" className="bg-green text-white px-5 py-2 rounded-md text-[13px] font-medium font-body hover:bg-green-light transition-colors">
               Get in Touch
             </Link>
           </div>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`lg:hidden transition-colors ${scrolled ? 'text-navy' : 'text-white'}`}
+            className={`lg:hidden transition-colors ${scrolled ? 'text-charcoal' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -97,7 +97,7 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setMenuOpen(false)} className="bg-green text-white px-5 py-2.5 rounded-full text-sm font-medium text-center font-body">
+              <Link href="/contact" onClick={() => setMenuOpen(false)} className="bg-green text-white px-5 py-2.5 rounded-md text-sm font-medium text-center font-body">
                 Get in Touch
               </Link>
             </div>
