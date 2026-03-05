@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 
 export default function ContactPage() {
@@ -19,8 +19,8 @@ export default function ContactPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-white/50 text-lg font-body font-light max-w-xl leading-relaxed">
-              From quick consultations to comprehensive engagements.
+            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed">
+              From quick consultations to comprehensive engagements — we are ready to help.
             </p>
           </FadeIn>
         </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <FadeIn delay={0.2} className="lg:col-span-2">
-              <div className="space-y-5">
+              <div className="space-y-6">
                 <div className="glass-card p-6 border border-gray-100 bg-white">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-green/10 flex items-center justify-center">
@@ -89,37 +89,25 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[13px] font-medium text-navy font-body">Email</p>
-                      <p className="text-sm text-charcoal/50 font-body">info@voltaimpactadvisors.com</p>
+                      <p className="text-sm text-charcoal/70 font-body">hello@voltaimpactadvisors.com</p>
                     </div>
                   </div>
-                </div>
-
-                <div className="glass-card p-6 border border-gray-100 bg-white">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center">
-                      <MapPin size={18} className="text-teal" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-medium text-navy font-body">Location</p>
-                      <p className="text-sm text-charcoal/50 font-body">Accra, Ghana</p>
-                    </div>
-                  </div>
-                  <p className="text-[12px] text-charcoal/30 font-body ml-[52px]">Serving clients across Africa and emerging markets</p>
+                  <p className="text-[12px] text-charcoal/50 font-body ml-[52px]">Serving clients across Africa and emerging markets</p>
                 </div>
 
                 <div className="bg-green/5 rounded-2xl p-6 border border-green/10">
                   <h3 className="font-heading font-bold text-green text-sm mb-4">Quick Engagement Options</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {[
-                      { label: 'Discovery Call', desc: '30-min intro to discuss your needs' },
-                      { label: 'Gap Assessment', desc: 'Rapid ESG posture assessment' },
-                      { label: 'Full Engagement', desc: 'Comprehensive advisory, tailored' },
+                      { label: 'Discovery Call', desc: '30-min intro to discuss your needs and how we can help' },
+                      { label: 'Gap Assessment', desc: 'Rapid ESG posture assessment to identify priorities' },
+                      { label: 'Full Engagement', desc: 'Comprehensive advisory, tailored to your specific context' },
                     ].map((opt) => (
                       <div key={opt.label} className="flex items-start gap-3">
                         <ArrowRight size={12} className="text-green mt-1 flex-shrink-0" />
                         <div>
                           <span className="text-navy text-sm font-medium font-body">{opt.label}</span>
-                          <span className="text-charcoal/40 text-sm font-body"> — {opt.desc}</span>
+                          <span className="text-charcoal/60 text-sm font-body"> — {opt.desc}</span>
                         </div>
                       </div>
                     ))}
@@ -127,8 +115,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="glass-card p-6 border border-gray-100 bg-white">
-                  <p className="text-[12px] text-charcoal/30 font-body uppercase tracking-wider mb-2">A Volta Partners Company</p>
-                  <p className="text-sm text-charcoal/50 font-body leading-relaxed">
+                  <p className="text-[12px] text-charcoal/50 font-body uppercase tracking-wider mb-2">A Volta Partners Company</p>
+                  <p className="text-sm text-charcoal/70 font-body leading-relaxed">
                     The dedicated ESG, impact, and sustainability practice of Volta Partners.
                   </p>
                 </div>

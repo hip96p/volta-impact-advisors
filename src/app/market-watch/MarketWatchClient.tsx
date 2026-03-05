@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Activity, Zap, TreePine, Leaf, ExternalLink, Rss, TrendingUp, BarChart3 } from 'lucide-react';
+import { Activity, Zap, TreePine, Leaf, ExternalLink, Rss, BarChart3 } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import BarChart from '@/components/BarChart';
 import type { MarketData, NewsItem } from '@/lib/market-data';
@@ -76,12 +76,12 @@ export default function MarketWatchClient({ marketData, news }: Props) {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-white/50 text-lg font-body font-light max-w-xl leading-relaxed">
+            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed">
               Live indicators from the World Bank and curated ESG news — updated weekly.
             </p>
           </FadeIn>
           <FadeIn delay={0.8}>
-            <p className="text-white/20 text-xs font-body mt-6">
+            <p className="text-white/30 text-xs font-body mt-6">
               Last updated: {formatDate(marketData.lastFetched)}
             </p>
           </FadeIn>
@@ -99,7 +99,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
             <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-4 max-w-lg">
               Key metrics across 15 African economies.
             </h2>
-            <p className="text-charcoal/40 text-sm font-body mb-16">
+            <p className="text-charcoal/60 text-sm font-body mb-16">
               Data: World Bank Development Indicators. Most recent available year per country.
             </p>
           </FadeIn>
@@ -112,11 +112,11 @@ export default function MarketWatchClient({ marketData, news }: Props) {
                     <section.icon size={18} className="text-green" />
                     <h3 className="font-heading font-bold text-navy text-base">{section.title}</h3>
                   </div>
-                  <p className="text-charcoal/30 text-[11px] font-body mb-6 ml-[30px]">{section.subtitle}</p>
+                  <p className="text-charcoal/50 text-[11px] font-body mb-6 ml-[30px]">{section.subtitle}</p>
                   {section.data.length > 0 ? (
                     <BarChart data={section.data} unit={section.unit} color={section.color} />
                   ) : (
-                    <p className="text-charcoal/30 text-sm font-body italic">Data temporarily unavailable</p>
+                    <p className="text-charcoal/50 text-sm font-body italic">Data temporarily unavailable</p>
                   )}
                 </div>
               </FadeIn>
@@ -136,13 +136,13 @@ export default function MarketWatchClient({ marketData, news }: Props) {
             <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-4 max-w-lg">
               Sustainability & climate finance news.
             </h2>
-            <p className="text-charcoal/40 text-sm font-body mb-16">
-              Aggregated from Climate Home News, African Development Bank, IISD, and Devex.
+            <p className="text-charcoal/60 text-sm font-body mb-16">
+              Aggregated from leading climate and development news sources.
             </p>
           </FadeIn>
 
           {news.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {news.map((item, i) => (
                 <FadeIn key={`${item.link}-${i}`} delay={i * 0.05}>
                   <a
@@ -157,7 +157,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
                           {item.source}
                         </span>
                         {item.pubDate && (
-                          <span className="text-[10px] text-charcoal/30 font-body">
+                          <span className="text-[10px] text-charcoal/50 font-body">
                             {formatDate(item.pubDate)}
                           </span>
                         )}
@@ -166,7 +166,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
                         {item.title}
                       </h3>
                     </div>
-                    <ExternalLink size={14} className="text-charcoal/20 group-hover:text-green transition-colors flex-shrink-0 mt-1" />
+                    <ExternalLink size={14} className="text-charcoal/30 group-hover:text-green transition-colors flex-shrink-0 mt-1" />
                   </a>
                 </FadeIn>
               ))}
@@ -174,7 +174,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
           ) : (
             <FadeIn>
               <div className="glass-card p-8 border border-gray-100 bg-white text-center">
-                <p className="text-charcoal/40 text-sm font-body">News feeds are being refreshed. Check back soon.</p>
+                <p className="text-charcoal/50 text-sm font-body">News feeds are being refreshed. Check back soon.</p>
               </div>
             </FadeIn>
           )}
@@ -188,7 +188,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
             <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-navy text-sm mb-2">Data Sources</h3>
-                <p className="text-charcoal/40 text-[12px] font-body leading-relaxed max-w-lg">
+                <p className="text-charcoal/60 text-[12px] font-body leading-relaxed max-w-lg">
                   Indicators from World Bank Development Indicators API. News aggregated from Climate Home News, African Development Bank, IISD SDG Knowledge Hub, and Devex. Updated weekly.
                 </p>
               </div>

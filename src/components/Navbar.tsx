@@ -36,7 +36,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-green flex items-center justify-center">
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${
+              scrolled ? 'bg-green' : 'bg-white/15 border border-white/20'
+            }`}>
               <span className="text-white font-extrabold text-[10px] font-heading tracking-tight">VIA</span>
             </div>
             <span className={`font-semibold text-sm tracking-tight font-heading transition-colors duration-500 ${
@@ -54,7 +56,7 @@ export default function Navbar() {
                 className={`text-[13px] font-medium transition-colors duration-300 font-body ${
                   pathname === link.href
                     ? 'text-green'
-                    : scrolled ? 'text-charcoal/70 hover:text-charcoal' : 'text-white/70 hover:text-white'
+                    : scrolled ? 'text-charcoal/70 hover:text-charcoal' : 'text-white/80 hover:text-white'
                 }`}
               >
                 {link.label}

@@ -24,7 +24,7 @@ const demandColor: Record<string, string> = {
   'High': 'bg-teal/10 text-teal',
   'Growing': 'bg-sunglow/20 text-amber-700',
   'Steady': 'bg-blue-50 text-blue-600',
-  'Moderate': 'bg-gray-100 text-gray-500',
+  'Moderate': 'bg-gray-100 text-gray-600',
 };
 
 const categoryColor: Record<string, string> = {
@@ -56,7 +56,7 @@ export default function FrameworksPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-white/50 text-lg font-body font-light max-w-xl leading-relaxed">
+            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed">
               Translating global requirements into practical, locally-adapted implementation plans.
             </p>
           </FadeIn>
@@ -68,17 +68,20 @@ export default function FrameworksPage() {
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">All Frameworks</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-16 max-w-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6 max-w-lg">
               Deep expertise across every major standard.
             </h2>
+            <p className="text-charcoal/70 font-body leading-relaxed max-w-2xl mb-16">
+              The ESG landscape is complex and fast-moving, with dozens of frameworks competing for attention. We help you cut through the noise — identifying which standards matter for your context and building practical roadmaps to compliance.
+            </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {frameworks.map((fw, i) => (
               <FadeIn key={fw.name} delay={i * 0.05}>
                 <div className="glass-card p-6 border border-gray-100 bg-white group h-full flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium font-body ${categoryColor[fw.category] || 'bg-gray-100 text-gray-500'}`}>
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium font-body ${categoryColor[fw.category] || 'bg-gray-100 text-gray-600'}`}>
                       {fw.category}
                     </span>
                     <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium font-body ${demandColor[fw.demand]}`}>
@@ -86,8 +89,8 @@ export default function FrameworksPage() {
                     </span>
                   </div>
                   <h3 className="font-heading font-bold text-navy text-lg mb-1">{fw.name}</h3>
-                  <p className="text-charcoal/30 text-[11px] font-body mb-3">{fw.full}</p>
-                  <p className="text-charcoal/50 text-sm font-body leading-relaxed mb-4 flex-1">{fw.desc}</p>
+                  <p className="text-charcoal/50 text-[11px] font-body mb-3">{fw.full}</p>
+                  <p className="text-charcoal/70 text-sm font-body leading-relaxed mb-4 flex-1">{fw.desc}</p>
                   <Link href="/contact" className="inline-flex items-center gap-2 text-green text-[13px] font-medium font-body opacity-0 group-hover:opacity-100 transition-opacity">
                     Get expert help <ArrowRight size={12} />
                   </Link>
@@ -106,7 +109,7 @@ export default function FrameworksPage() {
             <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
               Working with a framework not listed?
             </h2>
-            <p className="text-white/40 text-lg font-body mb-10 max-w-md mx-auto">
+            <p className="text-white/60 text-lg font-body mb-10 max-w-md mx-auto">
               We have experience across the full spectrum of ESG and sustainability standards.
             </p>
             <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">

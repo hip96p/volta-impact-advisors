@@ -24,10 +24,10 @@ const logos = [
 ];
 
 const differentiators = [
-  { icon: Target, title: 'Implementation Focus', desc: 'We go beyond reports to operational change' },
-  { icon: Shield, title: 'Africa Expertise', desc: 'Deep local knowledge, not Western templates' },
-  { icon: Lightbulb, title: 'Regulatory Bridge', desc: 'Translating global standards to local reality' },
-  { icon: Users, title: 'Full Spectrum', desc: 'Banks, investors, DFIs, and governments' },
+  { icon: Target, title: 'Implementation Focus', desc: 'We go beyond reports to embed operational change across your organization.' },
+  { icon: Shield, title: 'Africa Expertise', desc: 'Deep local knowledge means solutions that actually work on the ground.' },
+  { icon: Lightbulb, title: 'Regulatory Bridge', desc: 'Translating complex global standards into practical local implementation.' },
+  { icon: Users, title: 'Full Spectrum', desc: 'One integrated practice serving banks, investors, DFIs, and governments.' },
 ];
 
 export default function HomePage() {
@@ -54,7 +54,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="text-white/50 text-lg md:text-xl font-body font-light max-w-xl mb-12 leading-relaxed">
+            <p className="text-white/70 text-lg md:text-xl font-body font-light max-w-xl mb-12 leading-relaxed">
               Advisory for banks, investors, DFIs, and governments navigating ESG across Africa and emerging markets.
             </p>
           </FadeIn>
@@ -64,7 +64,7 @@ export default function HomePage() {
               <Link href="/services" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
                 Explore Services
               </Link>
-              <Link href="/contact" className="border border-white/20 text-white/80 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
+              <Link href="/contact" className="border border-white/30 text-white/90 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
                 Start a Conversation
               </Link>
             </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
                   <div className="text-green-light font-heading font-bold text-4xl md:text-5xl">
                     <Counter target={stat.target} suffix={stat.suffix} />
                   </div>
-                  <div className="text-white/30 text-sm mt-2 font-body">{stat.label}</div>
+                  <div className="text-white/50 text-sm mt-2 font-body">{stat.label}</div>
                 </div>
               </FadeIn>
             ))}
@@ -94,11 +94,11 @@ export default function HomePage() {
       {/* ── LOGO TICKER ── */}
       <section className="bg-white !py-10 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-center text-[11px] text-charcoal/30 tracking-[0.15em] uppercase mb-6 font-body">Our team has worked with</p>
+          <p className="text-center text-[11px] text-charcoal/50 tracking-[0.15em] uppercase mb-6 font-body">Our team has worked with</p>
           <div className="overflow-hidden">
             <div className="flex gap-16 items-center animate-scroll">
               {[...logos, ...logos].map((name, i) => (
-                <span key={i} className="text-charcoal/20 font-heading font-bold text-sm whitespace-nowrap hover:text-charcoal/50 transition">{name}</span>
+                <span key={i} className="text-charcoal/30 font-heading font-bold text-sm whitespace-nowrap hover:text-charcoal/60 transition">{name}</span>
               ))}
             </div>
           </div>
@@ -113,12 +113,12 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg">
               Five client segments.<br />One integrated practice.
             </h2>
-            <p className="text-charcoal/50 font-body max-w-md mb-16 leading-relaxed">
-              Tailored advisory that bridges international standards with local realities.
+            <p className="text-charcoal/70 font-body max-w-lg mb-16 leading-relaxed">
+              We deliver tailored advisory that bridges international sustainability standards with local African realities — helping each client segment navigate their specific ESG challenges with practical, implementable solutions.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {segments.map((seg, i) => (
               <FadeIn key={seg.title} delay={i * 0.1}>
                 <Link href={seg.href} className="glass-card p-6 group block border border-gray-100 bg-white">
@@ -126,7 +126,7 @@ export default function HomePage() {
                     <seg.icon size={20} />
                   </div>
                   <h3 className="font-heading font-bold text-navy text-base mb-1.5">{seg.title}</h3>
-                  <p className="text-charcoal/40 text-[13px] font-body leading-relaxed mb-4">{seg.desc}</p>
+                  <p className="text-charcoal/60 text-[13px] font-body leading-relaxed mb-4">{seg.desc}</p>
                   <ArrowRight size={14} className="text-green opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </FadeIn>
@@ -145,18 +145,18 @@ export default function HomePage() {
                 <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 leading-tight">
                   Not another Western template.
                 </h2>
-                <p className="text-charcoal/50 font-body leading-relaxed mb-12 max-w-md">
-                  We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground.
+                <p className="text-charcoal/70 font-body leading-relaxed mb-12 max-w-md">
+                  Most ESG advisory firms apply the same Western playbooks everywhere. We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground — because different markets need different approaches.
                 </p>
               </FadeIn>
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-8">
                 {differentiators.map((d, i) => (
                   <FadeIn key={d.title} delay={i * 0.1}>
                     <div>
                       <d.icon size={20} className="text-green mb-3" />
-                      <h4 className="font-heading font-bold text-navy text-sm mb-1">{d.title}</h4>
-                      <p className="text-charcoal/40 text-[13px] font-body">{d.desc}</p>
+                      <h4 className="font-heading font-bold text-navy text-sm mb-1.5">{d.title}</h4>
+                      <p className="text-charcoal/60 text-[13px] font-body leading-relaxed">{d.desc}</p>
                     </div>
                   </FadeIn>
                 ))}
@@ -190,14 +190,14 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
               Ready to start?
             </h2>
-            <p className="text-white/40 text-lg font-body mb-10 max-w-md mx-auto">
+            <p className="text-white/60 text-lg font-body mb-10 max-w-md mx-auto">
               From PRB compliance to impact assessment — let&apos;s talk about what you need.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
                 Get in Touch
               </Link>
-              <Link href="/services" className="border border-white/20 text-white/70 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
+              <Link href="/services" className="border border-white/30 text-white/80 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
                 View All Services
               </Link>
             </div>

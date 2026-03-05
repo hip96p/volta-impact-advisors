@@ -38,7 +38,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font-body); color: var(--via-charcoal); background: var(--via-white); -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: #2D3E4A; background: var(--via-white); -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 html { scroll-behavior: smooth; }
 
@@ -57,21 +57,21 @@ html { scroll-behavior: smooth; }
 
 /* Glass card */
 .glass-card {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid #E5E7EB;
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glass-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-  border-color: rgba(9,129,74,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  border-color: rgba(9,129,74,0.25);
 }
 
 /* Minimal section spacing */
-section { padding: 120px 0; }
-@media (max-width: 768px) { section { padding: 80px 0; } }
+section { padding: 100px 0; }
+@media (max-width: 768px) { section { padding: 64px 0; } }
 
 /* Subtle grid bg */
 .grid-bg {

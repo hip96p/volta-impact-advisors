@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-midnight text-white/40 py-16">
+    <footer className="bg-midnight text-white/50 py-16">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div className="col-span-2 md:col-span-1">
@@ -32,6 +32,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-[13px]">
               <Link href="/about" className="hover:text-white transition">About</Link>
               <Link href="/frameworks" className="hover:text-white transition">Frameworks</Link>
+              <Link href="/market-watch" className="hover:text-white transition">Market Watch</Link>
               <Link href="/contact" className="hover:text-white transition">Contact</Link>
             </div>
           </div>
@@ -39,8 +40,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-[13px] font-semibold mb-4 font-heading">Connect</h4>
             <div className="flex flex-col gap-2.5 text-[13px]">
-              <span>info@voltaimpactadvisors.com</span>
-              <span>Accra, Ghana</span>
+              <span>hello@voltaimpactadvisors.com</span>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ const segments = [
     title: 'Banks & Financial Institutions',
     color: 'bg-blue-50 text-blue-600',
     tagline: 'Navigate regulatory compliance and mobilize sustainable finance.',
+    intro: 'Financial institutions face growing pressure to align with global sustainability frameworks while remaining competitive. We help banks integrate ESG into their core operations — from regulatory compliance and risk management to green bond issuance and climate finance mobilization.',
     services: [
       'PRB Reporting & Compliance',
       'IFRS S1/S2 Implementation',
@@ -29,6 +30,7 @@ const segments = [
     title: 'Investors & Asset Managers',
     color: 'bg-emerald-50 text-emerald-600',
     tagline: 'Measure impact rigorously and integrate ESG into investment processes.',
+    intro: 'Investors increasingly need to demonstrate impact alongside returns. We support asset managers and fund managers with rigorous impact measurement, ESG integration across portfolios, and alignment with leading frameworks like IRIS+, IMP, and PRI.',
     services: [
       'Impact Report Preparation',
       'External Impact Validation',
@@ -46,6 +48,7 @@ const segments = [
     title: 'Governments & Public Sector',
     color: 'bg-amber-50 text-amber-600',
     tagline: 'Design sustainability programs and access climate finance.',
+    intro: 'Governments play a critical role in creating enabling environments for sustainable development. We help public sector clients design and implement national climate strategies, develop green taxonomies, and build readiness to access international climate finance mechanisms.',
     services: [
       'Sustainability Program Design',
       'Program Implementation Support',
@@ -63,6 +66,7 @@ const segments = [
     title: 'DFIs & Development Partners',
     color: 'bg-purple-50 text-purple-600',
     tagline: 'Conduct rigorous assessments and ensure E&S compliance.',
+    intro: 'Development finance institutions require robust environmental and social safeguards across their investment portfolios. We provide end-to-end E&S advisory — from pre-investment due diligence and IFC Performance Standards compliance to independent evaluations and resettlement planning.',
     services: [
       'Impact Assessment (Ex-ante & Ex-post)',
       'E&S / ESIA Due Diligence',
@@ -82,6 +86,7 @@ const segments = [
     title: 'Cross-Cutting Services',
     color: 'bg-rose-50 text-rose-600',
     tagline: 'Foundational capabilities serving all client types.',
+    intro: 'Some capabilities cut across all client segments. Whether you need to build internal ESG capacity through training, establish carbon accounting systems, or develop a net-zero transition roadmap, these foundational services support organizations at every stage of their sustainability journey.',
     services: [
       'ESG Training & Capacity Building',
       'Environmental Impact Assessment (EIA)',
@@ -116,8 +121,8 @@ export default function ServicesPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-white/50 text-lg font-body font-light max-w-xl leading-relaxed mb-10">
-              Over 40 specialized services organized by client segment.
+            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed mb-10">
+              Over 40 specialized services organized by client segment — each one adapted for Africa and emerging market contexts.
             </p>
           </FadeIn>
 
@@ -149,8 +154,8 @@ export default function ServicesPage() {
                   <h2 className="text-2xl md:text-3xl font-bold text-navy font-heading mb-3">
                     {segment.title}
                   </h2>
-                  <p className="text-charcoal/50 font-body leading-relaxed mb-6">
-                    {segment.tagline}
+                  <p className="text-charcoal/70 font-body leading-relaxed mb-6">
+                    {segment.intro}
                   </p>
                   <Link href="/contact" className="inline-flex items-center gap-2 text-green text-sm font-medium font-body hover:gap-3 transition-all">
                     Discuss your needs <ArrowRight size={14} />
@@ -160,7 +165,7 @@ export default function ServicesPage() {
 
               {/* Right — Service list */}
               <div className="lg:col-span-2">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {segment.services.map((service, i) => (
                     <FadeIn key={service} delay={i * 0.05}>
                       <div className="glass-card p-5 border border-gray-100 bg-white flex items-start gap-3 group">
@@ -184,11 +189,11 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
               Need something specific?
             </h2>
-            <p className="text-white/70 text-lg font-body mb-10 max-w-md mx-auto">
-              We tailor our advisory to your exact challenge.
+            <p className="text-white/80 text-lg font-body mb-10 max-w-md mx-auto">
+              We tailor our advisory to your exact challenge. Tell us what you need.
             </p>
             <Link href="/contact" className="bg-white text-green px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/90 transition-all hover:shadow-lg">
-              Let&apos;s Talk
+              Get in Touch
             </Link>
           </FadeIn>
         </div>
