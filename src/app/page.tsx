@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="via-container relative z-10" style={{ paddingTop: '220px', paddingBottom: '120px' }}>
+        <div className="via-container relative z-10" style={{ paddingTop: '160px', paddingBottom: '100px' }}>
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
