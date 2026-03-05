@@ -74,7 +74,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-green -top-20 -right-20 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 pt-36 pb-24">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">Services & Frameworks</p>
           </FadeIn>
@@ -105,9 +105,9 @@ export default function ServicesPage() {
       {/* Service Segments */}
       {segments.map((segment, idx) => (
         <section key={segment.id} id={segment.id} className={idx % 2 === 0 ? 'bg-white' : 'bg-cream-light'}>
-          <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+          <div className="max-w-[1200px] mx-auto px-6 md:px-16">
             <FadeIn>
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 rounded-lg bg-green/10 flex items-center justify-center">
                   <segment.icon size={24} className="text-green" />
                 </div>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-charcoal/70 font-body leading-relaxed mb-10 max-w-3xl text-[15px]">
+              <p className="text-charcoal/70 font-body leading-relaxed mb-14 max-w-3xl text-[15px]">
                 {segment.intro}
               </p>
             </FadeIn>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="bg-charcoal relative overflow-hidden">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-6">
               Need something specific?

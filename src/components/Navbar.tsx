@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
+    const handler = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
   }, []);
@@ -28,32 +28,30 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/95 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 bg-charcoal transition-shadow duration-500 ${
+        scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.15)]' : ''
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-20 md:h-24">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        <div className="flex items-center justify-between h-16 md:h-[76px]">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-md bg-green flex items-center justify-center">
               <span className="text-white font-extrabold text-[10px] font-heading tracking-tight">VIA</span>
             </div>
-            <span className={`font-semibold text-sm tracking-tight font-heading transition-colors duration-500 ${
-              scrolled ? 'text-charcoal' : 'text-white'
-            }`}>
+            <span className="text-white font-semibold text-sm tracking-tight font-heading">
               Volta Impact Advisors
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`text-[13px] font-medium transition-colors duration-300 font-body ${
                   pathname === link.href
-                    ? 'text-green'
-                    : scrolled ? 'text-charcoal/70 hover:text-charcoal' : 'text-white/80 hover:text-white'
+                    ? 'text-green-light'
+                    : 'text-white/70 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -66,7 +64,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`lg:hidden transition-colors ${scrolled ? 'text-charcoal' : 'text-white'}`}
+            className="lg:hidden text-white"
             aria-label="Toggle menu"
           >
             <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -82,7 +80,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100"
+            className="lg:hidden bg-charcoal border-t border-white/10"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -90,7 +88,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-charcoal/70 hover:text-charcoal text-sm font-body"
+                  className="text-white/70 hover:text-white text-sm font-body"
                 >
                   {link.label}
                 </Link>

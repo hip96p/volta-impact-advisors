@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 pt-36 pb-24">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
@@ -73,7 +73,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <h1 className="text-white text-4xl md:text-6xl lg:text-[4.5rem] font-heading font-bold leading-[1.1] max-w-4xl mb-8">
+            <h1 className="text-white text-4xl md:text-6xl lg:text-[4.5rem] font-heading font-bold leading-[1.1] max-w-4xl">
               Turning{' '}
               <RotatingText words={rotatingWords} />
               <br />
@@ -82,13 +82,13 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed mt-8">
+            <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed mt-12">
               Advisory for banks, investors, development finance institutions, and governments navigating ESG across Africa and emerging markets.
             </p>
           </FadeIn>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-24 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-28 pt-12 border-t border-white/10">
             {[
               { target: 40, suffix: '+', label: 'Services' },
               { target: 15, suffix: '+', label: 'Frameworks' },
@@ -110,8 +110,8 @@ export default function HomePage() {
 
       {/* ── LOGO TICKER ── */}
       <section className="bg-cream-light !py-12">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <p className="text-center text-[12px] text-charcoal/70 tracking-[0.15em] uppercase mb-6 font-body font-medium">Our team has worked with</p>
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+          <p className="text-center text-[12px] text-charcoal tracking-[0.15em] uppercase mb-6 font-body font-semibold">Our team has worked with</p>
           <div className="overflow-hidden">
             <div className="flex gap-16 items-center animate-scroll">
               {[...logos, ...logos].map((name, i) => (
@@ -124,13 +124,13 @@ export default function HomePage() {
 
       {/* ── WHO WE SERVE ── */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Who We Serve</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-8 max-w-lg leading-tight">
               Rapidly evolving needs and expectations. One integrated practice.
             </h2>
-            <p className="text-charcoal/70 font-body max-w-2xl mb-16 leading-relaxed">
+            <p className="text-charcoal/70 font-body max-w-2xl mb-20 leading-relaxed">
               We deliver tailored advisory that bridges international sustainability standards with local African realities. Each client segment gets solutions designed for their specific regulatory, operational, and strategic context.
             </p>
           </FadeIn>
@@ -153,13 +153,13 @@ export default function HomePage() {
 
       {/* ── WHY US ── */}
       <section className="bg-cream-light">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Why Us</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-8 leading-tight max-w-lg">
               Not another one size fits all.
             </h2>
-            <p className="text-charcoal/70 font-body leading-relaxed mb-16 max-w-2xl">
+            <p className="text-charcoal/70 font-body leading-relaxed mb-20 max-w-2xl">
               Most ESG advisory firms apply the same playbooks everywhere. We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground — because different markets demand different approaches.
             </p>
           </FadeIn>
@@ -184,7 +184,7 @@ export default function HomePage() {
 
       {/* ── CASE STUDIES ── */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Selected Work</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-16 max-w-lg leading-tight">
@@ -212,7 +212,7 @@ export default function HomePage() {
       {/* ── READY TO START — Contact Form ── */}
       <section className="bg-charcoal relative overflow-hidden">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
               <div>
