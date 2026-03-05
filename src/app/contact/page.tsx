@@ -9,7 +9,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[400px] h-[400px] bg-green -top-20 right-20 absolute" />
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24 relative z-10 pt-36 pb-24">
+        <div className="via-container relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">Get in Touch</p>
           </FadeIn>
@@ -28,7 +28,7 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24">
+        <div className="via-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20">
             {/* Form */}
             <FadeIn className="lg:col-span-3">

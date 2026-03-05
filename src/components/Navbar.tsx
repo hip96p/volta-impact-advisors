@@ -32,7 +32,7 @@ export default function Navbar() {
         scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.15)]' : ''
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24">
+      <div className="via-container">
         <div className="flex items-center justify-between h-16 md:h-[76px]">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-md bg-green flex items-center justify-center">

@@ -69,6 +69,14 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 8px 32px rgba(9,129,74,0.06);
 }
 
+/* Bulletproof container — percentage-based so content is ALWAYS inset */
+.via-container {
+  width: 88%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Section spacing — generous */
 section { padding: 96px 0; }
 @media (max-width: 768px) { section { padding: 64px 0; } }

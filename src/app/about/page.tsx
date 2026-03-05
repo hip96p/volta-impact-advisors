@@ -42,7 +42,7 @@ export default function AboutPage() {
       <section className="relative min-h-[55vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-20 -right-20 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-10 -left-10 absolute" />
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24 relative z-10 pt-36 pb-24">
+        <div className="via-container relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">About Us</p>
           </FadeIn>
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
       {/* Mission / Approach */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24">
+        <div className="via-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <FadeIn>
               <div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="bg-cream-light">
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24">
+        <div className="via-container">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Team</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-6 leading-tight max-w-lg">
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24">
+        <div className="via-container">
           <FadeIn>
             <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Values</p>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal font-heading mb-6 max-w-lg leading-tight">
@@ -172,7 +172,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="bg-charcoal relative overflow-hidden">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-[1200px] mx-auto px-8 sm:px-12 md:px-20 lg:px-24 relative z-10 text-center">
+        <div className="via-container relative z-10 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-6">
               Join us in shaping a sustainable future.
