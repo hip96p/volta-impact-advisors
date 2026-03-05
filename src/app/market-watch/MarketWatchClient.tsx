@@ -58,10 +58,10 @@ export default function MarketWatchClient({ marketData, news }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
+      <section className="relative bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-40 right-10 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-0 -left-10 absolute" />
-        <div className="via-container relative z-10 pt-36 pb-24">
+        <div className="via-container relative z-10 pt-48 pb-28">
           <FadeIn delay={0.2}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />

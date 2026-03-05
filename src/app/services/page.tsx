@@ -72,9 +72,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
+      <section className="relative bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-green -top-20 -right-20 absolute" />
-        <div className="via-container relative z-10 pt-44 pb-24">
+        <div className="via-container relative z-10 pt-48 pb-28">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">Services & Frameworks</p>
           </FadeIn>

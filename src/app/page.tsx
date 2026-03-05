@@ -61,11 +61,11 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[100vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
+      <section className="relative bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="via-container relative z-10 pt-36 pb-24">
+        <div className="via-container relative z-10 pt-48 pb-28">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
@@ -88,18 +88,18 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.8}>
-            <div className="flex flex-wrap gap-4 mt-16">
-              <Link href="/services" className="bg-green text-white px-7 py-3 rounded-md text-sm font-medium font-body hover:bg-green-light transition-all inline-flex items-center gap-2">
+            <div className="flex flex-wrap gap-4 mt-14">
+              <Link href="/services" className="bg-green text-white px-7 py-3.5 rounded-md text-sm font-medium font-body hover:bg-green-light transition-all inline-flex items-center gap-2">
                 Our Services <ArrowRight size={15} />
               </Link>
-              <Link href="/contact" className="bg-white/10 text-white border border-white/20 px-7 py-3 rounded-md text-sm font-medium font-body hover:bg-white/20 transition-all">
+              <Link href="/contact" className="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-md text-sm font-medium font-body hover:bg-white/20 transition-all">
                 Start a Conversation
               </Link>
             </div>
           </FadeIn>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-24 pt-12 border-t border-white/10">
             {[
               { target: 40, suffix: '+', label: 'Services' },
               { target: 15, suffix: '+', label: 'Frameworks' },
