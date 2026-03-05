@@ -1,185 +1,207 @@
+'use client';
+
 import Link from 'next/link';
+import { Building2, TrendingUp, Landmark, Globe, GraduationCap, ArrowRight, Shield, Target, Lightbulb, Users } from 'lucide-react';
+import FadeIn from '@/components/FadeIn';
+import Counter from '@/components/Counter';
 
-const stats = [
-  { value: '40+', label: 'ESG & Sustainability Services' },
-  { value: '15+', label: 'International Frameworks' },
-  { value: '20+', label: 'Years Combined Experience' },
-  { value: '23', label: 'Countries Across Africa' },
-];
-
-const clientSegments = [
-  {
-    icon: '🏦',
-    title: 'Banks & Financial Institutions',
-    description: 'PRB reporting, IFRS S1/S2 implementation, green bond frameworks, sustainable finance mobilization, ESG risk integration, and climate stress testing.',
-    href: '/services#banks',
-  },
-  {
-    icon: '📊',
-    title: 'Investors & Asset Managers',
-    description: 'Impact report preparation with external validation, ESG due diligence, IRIS+ alignment, portfolio carbon footprinting, and ESG value creation advisory.',
-    href: '/services#investors',
-  },
-  {
-    icon: '🏛️',
-    title: 'Governments & Public Sector',
-    description: 'Sustainability program design and implementation, national climate strategies, green taxonomy development, just transition planning, and carbon market design.',
-    href: '/services#governments',
-  },
-  {
-    icon: '🌍',
-    title: 'DFIs & Development Partners',
-    description: 'Impact assessment, E&S/ESIA due diligence, ESAP development, independent evaluation, IFC Performance Standards compliance, and biodiversity action plans.',
-    href: '/services#dfis',
-  },
-  {
-    icon: '🎓',
-    title: 'Cross-Cutting Services',
-    description: 'ESG training, environmental impact assessments, carbon accounting, SBTi targets, CSR strategy, net zero planning, and international framework implementation.',
-    href: '/services#cross-cutting',
-  },
+const segments = [
+  { icon: Building2, title: 'Banks', desc: 'PRB, IFRS S1/S2, green bonds, climate finance', href: '/services#banks', color: 'bg-blue-50 text-blue-600' },
+  { icon: TrendingUp, title: 'Investors', desc: 'Impact reports, ESG due diligence, validation', href: '/services#investors', color: 'bg-emerald-50 text-emerald-600' },
+  { icon: Landmark, title: 'Governments', desc: 'Climate strategy, program design, carbon markets', href: '/services#governments', color: 'bg-amber-50 text-amber-600' },
+  { icon: Globe, title: 'DFIs', desc: 'ESIA, impact assessment, IFC compliance', href: '/services#dfis', color: 'bg-purple-50 text-purple-600' },
+  { icon: GraduationCap, title: 'Everyone', desc: 'ESG training, EIA, carbon accounting, CSR', href: '/services#cross-cutting', color: 'bg-rose-50 text-rose-600' },
 ];
 
 const frameworks = [
-  'IFRS S1/S2', 'CSRD/ESRS', 'PRB (UNEP FI)', 'IFC Performance Standards',
-  'TCFD/TNFD', 'SBTi', 'EU Taxonomy', 'GRI/SASB/CDP',
-  'UN Global Compact', 'PRI', 'Net-Zero Asset Owners Alliance', 'ICMA Principles',
+  'IFRS S1/S2', 'CSRD/ESRS', 'PRB', 'IFC PS', 'TCFD', 'TNFD',
+  'SBTi', 'EU Taxonomy', 'GRI', 'CDP', 'PRI', 'NZAOA', 'UN Global Compact', 'ICMA',
 ];
 
-const trustedBy = [
+const logos = [
   'African Development Bank', 'IFC', 'World Bank', 'British International Investment',
-  'Africa Finance Corporation', 'Standard Chartered', 'Standard Bank',
-  'Simon-Kucher & Partners', 'Citigroup', 'UBS',
+  'Africa Finance Corporation', 'Standard Chartered', 'Standard Bank', 'Citigroup', 'UBS',
+];
+
+const differentiators = [
+  { icon: Target, title: 'Implementation Focus', desc: 'We go beyond reports to operational change' },
+  { icon: Shield, title: 'Africa Expertise', desc: 'Deep local knowledge, not Western templates' },
+  { icon: Lightbulb, title: 'Regulatory Bridge', desc: 'Translating global standards to local reality' },
+  { icon: Users, title: 'Full Spectrum', desc: 'Banks, investors, DFIs, and governments' },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="bg-midnight pt-32 pb-24 lg:pt-44 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><path d='M30 0v60M0 30h60' stroke='white' stroke-width='0.5'/></svg>")` }} />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="accent-line" />
-              <span className="text-green-light text-sm font-medium tracking-widest uppercase font-body">ESG, Impact &amp; Sustainability Advisory</span>
-            </div>
-            <h1 className="text-white text-4xl lg:text-6xl leading-tight mb-6 font-heading font-bold">
-              Bridging global ESG standards<br className="hidden lg:block" /> with local impact.
-            </h1>
-            <p className="text-gray-400 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl font-body">
-              We help banks, investors, DFIs, and governments navigate ESG compliance, measure impact, mobilize sustainable finance, and drive measurable change across Africa and emerging markets.
+      {/* ── HERO ── */}
+      <section className="relative min-h-[100vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
+        {/* Blobs */}
+        <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
+        <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+          <FadeIn delay={0.2}>
+            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-6 font-body">
+              ESG &middot; Impact &middot; Sustainability
             </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] mb-8 max-w-4xl">
+              Global standards.<br />
+              <span className="text-green-light">Local impact.</span>
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.6}>
+            <p className="text-white/50 text-lg md:text-xl font-body font-light max-w-xl mb-12 leading-relaxed">
+              Advisory for banks, investors, DFIs, and governments navigating ESG across Africa and emerging markets.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.8}>
             <div className="flex flex-wrap gap-4">
-              <Link href="/services" className="btn-primary">Our Services</Link>
-              <Link href="/contact" className="btn-outline !border-green-light !text-green-light hover:!bg-green-light hover:!text-white">Start a Conversation</Link>
+              <Link href="/services" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
+                Explore Services
+              </Link>
+              <Link href="/contact" className="border border-white/20 text-white/80 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
+                Start a Conversation
+              </Link>
             </div>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-gray-800">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-green-light font-heading font-bold text-4xl lg:text-5xl">{stat.value}</div>
-                <div className="text-gray-500 text-sm mt-1 font-body">{stat.label}</div>
-              </div>
+          </FadeIn>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-white/10">
+            {[
+              { target: 40, suffix: '+', label: 'Services' },
+              { target: 15, suffix: '+', label: 'Frameworks' },
+              { target: 23, suffix: '', label: 'Countries' },
+              { target: 20, suffix: '+', label: 'Years Experience' },
+            ].map((stat, i) => (
+              <FadeIn key={stat.label} delay={1 + i * 0.1}>
+                <div>
+                  <div className="text-green-light font-heading font-bold text-4xl md:text-5xl">
+                    <Counter target={stat.target} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-white/30 text-sm mt-2 font-body">{stat.label}</div>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TRUSTED BY */}
-      <section className="bg-cream !py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <p className="text-center text-sm text-slate font-medium tracking-widest uppercase mb-8 font-body">Our team has worked with and within</p>
+      {/* ── LOGO TICKER ── */}
+      <section className="bg-white !py-10 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-center text-[11px] text-charcoal/30 tracking-[0.15em] uppercase mb-6 font-body">Our team has worked with</p>
           <div className="overflow-hidden">
-            <div className="flex gap-12 items-center animate-scroll">
-              {[...trustedBy, ...trustedBy].map((name, i) => (
-                <span key={i} className="text-navy font-bold text-sm whitespace-nowrap opacity-40 hover:opacity-80 transition font-heading">{name}</span>
+            <div className="flex gap-16 items-center animate-scroll">
+              {[...logos, ...logos].map((name, i) => (
+                <span key={i} className="text-charcoal/20 font-heading font-bold text-sm whitespace-nowrap hover:text-charcoal/50 transition">{name}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHO WE SERVE */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="flex items-center gap-3 justify-center mb-4">
-              <div className="accent-line" />
-              <span className="text-green text-sm font-medium tracking-widest uppercase font-body">Who We Serve</span>
-              <div className="accent-line" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-heading mb-4">Tailored advisory across every stakeholder</h2>
-            <p className="text-slate font-body leading-relaxed">From regulatory compliance to impact measurement, we deliver practical solutions that bridge international standards with local realities.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {clientSegments.map((segment) => (
-              <Link key={segment.title} href={segment.href} className="feature-card border border-gray-100 group">
-                <div className="text-3xl mb-4">{segment.icon}</div>
-                <h3 className="text-lg font-bold text-navy font-heading mb-2 group-hover:text-green transition">{segment.title}</h3>
-                <p className="text-sm text-slate font-body leading-relaxed">{segment.description}</p>
-                <div className="mt-4 text-green text-sm font-medium font-body">Learn more →</div>
-              </Link>
+      {/* ── WHO WE SERVE ── */}
+      <section className="bg-white grid-bg">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Who We Serve</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg">
+              Five client segments.<br />One integrated practice.
+            </h2>
+            <p className="text-charcoal/50 font-body max-w-md mb-16 leading-relaxed">
+              Tailored advisory that bridges international standards with local realities.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {segments.map((seg, i) => (
+              <FadeIn key={seg.title} delay={i * 0.1}>
+                <Link href={seg.href} className="glass-card p-6 group block border border-gray-100 bg-white">
+                  <div className={`w-10 h-10 rounded-xl ${seg.color} flex items-center justify-center mb-4`}>
+                    <seg.icon size={20} />
+                  </div>
+                  <h3 className="font-heading font-bold text-navy text-base mb-1.5">{seg.title}</h3>
+                  <p className="text-charcoal/40 text-[13px] font-body leading-relaxed mb-4">{seg.desc}</p>
+                  <ArrowRight size={14} className="text-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHY VIA */}
-      <section className="bg-sand">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* ── WHY US ── */}
+      <section className="bg-cream/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="accent-line" />
-                <span className="text-green text-sm font-medium tracking-widest uppercase font-body">Why Volta Impact Advisors</span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy font-heading mb-6">Where global frameworks meet African reality</h2>
-              <p className="text-slate font-body leading-relaxed mb-8">We are not another consulting firm applying Western templates to African contexts. We combine deep local knowledge with international standards expertise to deliver solutions that actually work on the ground.</p>
-              <div className="space-y-4">
-                {[
-                  { title: 'Africa & Emerging Markets Depth', desc: 'Contextual expertise that global firms cannot replicate' },
-                  { title: 'Full Client Spectrum', desc: 'We serve banks, investors, DFIs, and governments — not just one segment' },
-                  { title: 'Implementation Focus', desc: 'We go beyond reports to drive operational change and real outcomes' },
-                  { title: 'Regulatory Bridge', desc: 'We translate between IFRS, IFC PS, PRB, SBTi, and local requirements' },
-                  { title: 'Affordable Excellence', desc: 'Premium quality at accessible price points for mid-market clients' },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-green" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    </div>
+              <FadeIn>
+                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Why Us</p>
+                <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 leading-tight">
+                  Not another Western template.
+                </h2>
+                <p className="text-charcoal/50 font-body leading-relaxed mb-12 max-w-md">
+                  We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground.
+                </p>
+              </FadeIn>
+
+              <div className="grid grid-cols-2 gap-6">
+                {differentiators.map((d, i) => (
+                  <FadeIn key={d.title} delay={i * 0.1}>
                     <div>
-                      <h4 className="font-semibold text-navy font-heading text-sm">{item.title}</h4>
-                      <p className="text-slate text-sm font-body">{item.desc}</p>
+                      <d.icon size={20} className="text-green mb-3" />
+                      <h4 className="font-heading font-bold text-navy text-sm mb-1">{d.title}</h4>
+                      <p className="text-charcoal/40 text-[13px] font-body">{d.desc}</p>
                     </div>
-                  </div>
+                  </FadeIn>
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-lg font-bold text-navy font-heading mb-6">Frameworks We Support</h3>
-              <div className="flex flex-wrap gap-2">
-                {frameworks.map((fw) => (
-                  <span key={fw} className="bg-green/10 text-green px-3 py-1.5 rounded-full text-xs font-medium font-body">{fw}</span>
-                ))}
+
+            <FadeIn direction="left">
+              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+                <h3 className="text-sm font-heading font-bold text-navy mb-6 uppercase tracking-wider">Frameworks</h3>
+                <div className="flex flex-wrap gap-2.5">
+                  {frameworks.map((fw) => (
+                    <span key={fw} className="bg-green/5 text-green/80 border border-green/10 px-3.5 py-1.5 rounded-full text-[12px] font-medium font-body">
+                      {fw}
+                    </span>
+                  ))}
+                </div>
+                <Link href="/frameworks" className="inline-flex items-center gap-2 text-green text-sm font-medium font-body mt-8 hover:gap-3 transition-all">
+                  Explore frameworks <ArrowRight size={14} />
+                </Link>
               </div>
-              <div className="mt-8 pt-6 border-t border-gray-100">
-                <Link href="/frameworks" className="text-green font-medium text-sm font-body hover:text-green-light transition">Explore our framework expertise →</Link>
-              </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-green !py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading mb-4">Ready to navigate the ESG landscape?</h2>
-          <p className="text-white/80 text-lg font-body mb-8 max-w-2xl mx-auto">Whether you need PRB compliance support, impact assessment, or a complete ESG strategy — let&apos;s start with a conversation.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-white">Get in Touch</Link>
-            <Link href="/services" className="btn-outline !border-white !text-white hover:!bg-white hover:!text-green">View Services</Link>
-          </div>
+      {/* ── CTA ── */}
+      <section className="bg-midnight relative overflow-hidden !py-28">
+        <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
+              Ready to start?
+            </h2>
+            <p className="text-white/40 text-lg font-body mb-10 max-w-md mx-auto">
+              From PRB compliance to impact assessment — let&apos;s talk about what you need.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
+                Get in Touch
+              </Link>
+              <Link href="/services" className="border border-white/20 text-white/70 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
+                View All Services
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

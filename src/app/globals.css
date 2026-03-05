@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -15,6 +15,9 @@
   --via-white: #FFFFFF;
   --via-charcoal: #37515F;
   --via-sunglow: #FFCA3A;
+  --via-gray-50: #F9FAFB;
+  --via-gray-100: #F3F4F6;
+  --via-gray-200: #E5E7EB;
 }
 
 @theme inline {
@@ -37,107 +40,43 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--font-body); color: var(--via-charcoal); background: var(--via-white); -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
-
-/* Smooth scrolling */
 html { scroll-behavior: smooth; }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Ticker */
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-scroll { animation: scroll 40s linear infinite; }
+
+/* Gradient blob */
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Glass card */
+.glass-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border-color: rgba(9,129,74,0.2);
 }
 
-.animate-fade-in-up { animation: fadeInUp 0.7s ease forwards; }
-.animate-scroll { animation: scroll 35s linear infinite; }
+/* Minimal section spacing */
+section { padding: 120px 0; }
+@media (max-width: 768px) { section { padding: 80px 0; } }
 
-/* Button styles */
-.btn-primary {
-  background: var(--via-green);
-  color: white;
-  padding: 14px 32px;
-  font-weight: 600;
-  font-family: var(--font-body);
-  letter-spacing: 0.02em;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 0.875rem;
+/* Subtle grid bg */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(9,129,74,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(9,129,74,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
-.btn-primary:hover {
-  background: var(--via-green-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(9,129,74,0.3);
-}
-
-.btn-outline {
-  border: 1.5px solid var(--via-green);
-  color: var(--via-green);
-  padding: 14px 32px;
-  font-weight: 600;
-  font-family: var(--font-body);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-.btn-outline:hover {
-  background: var(--via-green);
-  color: white;
-}
-
-.btn-white {
-  background: white;
-  color: var(--via-green);
-  padding: 14px 32px;
-  font-weight: 600;
-  font-family: var(--font-body);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-.btn-white:hover {
-  background: var(--via-cream);
-  transform: translateY(-1px);
-}
-
-/* Service cards */
-.service-card {
-  border-left: 3px solid transparent;
-  transition: all 0.3s ease;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 8px;
-}
-.service-card:hover {
-  border-left-color: var(--via-green);
-  background: var(--via-cream);
-  transform: translateX(4px);
-}
-
-/* Feature cards */
-.feature-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  background: white;
-  padding: 2rem;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-/* Accent line */
-.accent-line { width: 48px; height: 3px; background: var(--via-green); }
-
-/* Section spacing */
-section { padding: 96px 0; }
-@media (max-width: 768px) { section { padding: 64px 0; } }

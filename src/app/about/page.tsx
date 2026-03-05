@@ -1,131 +1,180 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'About — Volta Impact Advisors',
-  description: 'Learn about Volta Impact Advisors, Africa\'s leading ESG, impact, and sustainability advisory firm.',
-};
+import Link from 'next/link';
+import { Target, Shield, Lightbulb, Users, Handshake, BookOpen, ArrowRight, Check, X } from 'lucide-react';
+import FadeIn from '@/components/FadeIn';
+import Counter from '@/components/Counter';
 
 const values = [
-  { title: 'Context Over Templates', description: 'We adapt global ESG frameworks to local realities rather than applying one-size-fits-all Western approaches. Our solutions work because they are designed for the markets they serve.' },
-  { title: 'Impact That Counts', description: 'We prioritize measurable, verifiable impact over checkbox compliance. Every engagement is designed to create real, lasting change for communities and ecosystems.' },
-  { title: 'Implementation First', description: 'Reports gather dust. We focus on operational execution — building the systems, processes, and capabilities our clients need to deliver on their ESG commitments.' },
-  { title: 'Integrity & Independence', description: 'We provide honest, evidence-based advice. Our independence ensures our recommendations serve our clients\' long-term interests, not short-term optics.' },
-  { title: 'Knowledge Transfer', description: 'We build local capacity, not dependency. Every engagement includes knowledge transfer so our clients can sustain and build on our work.' },
-  { title: 'Collaborative Partnership', description: 'We work alongside our clients as partners, not detached consultants. We embed within teams, share context, and co-create solutions.' },
+  { icon: Target, title: 'Context Over Templates', desc: 'We adapt global frameworks to local realities' },
+  { icon: Shield, title: 'Impact That Counts', desc: 'Measurable, verifiable outcomes over checkbox compliance' },
+  { icon: Lightbulb, title: 'Implementation First', desc: 'Operational execution, not shelf-ready reports' },
+  { icon: Users, title: 'Integrity & Independence', desc: 'Honest, evidence-based advice with no conflicts' },
+  { icon: Handshake, title: 'Collaborative Partnership', desc: 'We embed within your team as co-creators' },
+  { icon: BookOpen, title: 'Knowledge Transfer', desc: 'Building local capacity, not dependency' },
+];
+
+const competitors = [
+  { label: 'Big Four', weakness: 'Expensive, slow, generalist', icon: X },
+  { label: 'Global ESG Specialists', weakness: 'Western-centric frameworks', icon: X },
+  { label: 'Local Consultancies', weakness: 'Limited breadth & scale', icon: X },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-midnight pt-32 pb-20 lg:pt-40 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="accent-line" />
-              <span className="text-green-light text-sm font-medium tracking-widest uppercase font-body">About Us</span>
-            </div>
-            <h1 className="text-white text-4xl lg:text-5xl font-bold font-heading mb-6">Where global ESG expertise meets African reality</h1>
-            <p className="text-gray-400 text-lg leading-relaxed font-body">Volta Impact Advisors is the ESG, impact, and sustainability practice of Volta Partners — purpose-built to help Africa and emerging markets navigate the rapidly evolving landscape of sustainable finance, environmental compliance, and impact measurement.</p>
-          </div>
+      <section className="relative min-h-[70vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
+        <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-20 -right-20 absolute" />
+        <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-10 -left-10 absolute" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+          <FadeIn delay={0.2}>
+            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-6 font-body">About Us</p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <h1 className="text-white text-5xl md:text-7xl font-heading font-bold leading-[1.05] mb-8 max-w-3xl">
+              Where global expertise meets <span className="text-green-light">African reality.</span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.6}>
+            <p className="text-white/50 text-lg font-body font-light max-w-xl leading-relaxed">
+              The ESG, impact, and sustainability practice of Volta Partners — purpose-built for Africa and emerging markets.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Mission & Approach */}
+      {/* Mission / Approach */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-bold text-navy font-heading mb-6">Our Mission</h2>
-              <p className="text-slate font-body leading-relaxed mb-4">
-                To be the leading ESG, impact, and sustainability advisory firm for Africa and emerging markets — combining deep local knowledge with international standards expertise to help our clients create measurable, lasting impact.
-              </p>
-              <p className="text-slate font-body leading-relaxed">
-                We bridge the gap between global ESG frameworks and local implementation, serving banks, investors, DFIs, and governments with practical, actionable solutions that drive real-world outcomes.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-bold text-navy font-heading mb-6">Our Approach</h2>
-              <p className="text-slate font-body leading-relaxed mb-4">
-                We believe that ESG and sustainability in emerging markets require a fundamentally different approach than what works in developed economies. Data gaps, institutional contexts, regulatory environments, and stakeholder dynamics demand localized expertise.
-              </p>
-              <p className="text-slate font-body leading-relaxed">
-                Our team combines hands-on experience within DFIs, investment banks, and development organizations with deep technical knowledge of international frameworks — from IFRS S1/S2 and IFC Performance Standards to SBTi and CSRD/ESRS.
-              </p>
-            </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <FadeIn>
+              <div>
+                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Mission</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6">
+                  Leading ESG advisory for emerging markets.
+                </h2>
+                <p className="text-charcoal/50 font-body leading-relaxed">
+                  We bridge the gap between global ESG frameworks and local implementation — serving banks, investors, DFIs, and governments with practical, actionable solutions.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div>
+                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Approach</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6">
+                  Different markets need different solutions.
+                </h2>
+                <p className="text-charcoal/50 font-body leading-relaxed">
+                  Data gaps, institutional contexts, and stakeholder dynamics in emerging markets demand localized expertise — not off-the-shelf Western playbooks.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Stats row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-gray-100">
+            {[
+              { target: 20, suffix: '+', label: 'Years Experience' },
+              { target: 23, suffix: '', label: 'Countries Served' },
+              { target: 5, suffix: '', label: 'Client Segments' },
+              { target: 15, suffix: '+', label: 'Frameworks' },
+            ].map((stat, i) => (
+              <FadeIn key={stat.label} delay={i * 0.1}>
+                <div className="text-center">
+                  <div className="text-green font-heading font-bold text-4xl">
+                    <Counter target={stat.target} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-charcoal/40 text-sm mt-2 font-body">{stat.label}</div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
       {/* The Gap We Fill */}
-      <section className="bg-sand">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="flex items-center gap-3 justify-center mb-4">
-              <div className="accent-line" />
-              <span className="text-green text-sm font-medium tracking-widest uppercase font-body">The Gap We Fill</span>
-              <div className="accent-line" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-heading mb-4">Why existing options fall short</h2>
+      <section className="bg-cream/50 grid-bg">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">The Gap We Fill</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-16 max-w-lg">
+              Why existing options fall short.
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {competitors.map((c, i) => (
+              <FadeIn key={c.label} delay={i * 0.1}>
+                <div className="bg-white rounded-2xl p-8 border border-gray-100">
+                  <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mb-4">
+                    <X size={16} className="text-red-400" />
+                  </div>
+                  <h3 className="font-heading font-bold text-navy mb-2">{c.label}</h3>
+                  <p className="text-charcoal/40 text-sm font-body">{c.weakness}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 border border-gray-100">
-              <h3 className="font-bold text-navy font-heading mb-3">Big Four Firms</h3>
-              <p className="text-sm text-red-600 font-medium font-body mb-2">Expensive, slow, generalist approach</p>
-              <p className="text-sm text-slate font-body leading-relaxed">Premium pricing limits mid-market access. Generalist teams may lack depth in Africa-specific ESG contexts. Designed for large corporates, not the diverse client base of emerging markets.</p>
+          <FadeIn delay={0.3}>
+            <div className="bg-green/5 rounded-2xl p-8 border border-green/15 flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check size={16} className="text-green" />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-green mb-1">Volta Impact Advisors</h3>
+                <p className="text-charcoal/50 text-sm font-body">Deep Africa expertise + international standards knowledge + full client coverage + affordable excellence.</p>
+              </div>
             </div>
-            <div className="bg-white rounded-xl p-8 border border-gray-100">
-              <h3 className="font-bold text-navy font-heading mb-3">Global ESG Specialists</h3>
-              <p className="text-sm text-red-600 font-medium font-body mb-2">Western-centric frameworks</p>
-              <p className="text-sm text-slate font-body leading-relaxed">Strong capabilities in developed markets but limited Africa-specific contextualization. Western ESG frameworks are ill-suited to local contexts without significant adaptation.</p>
-            </div>
-            <div className="bg-white rounded-xl p-8 border border-gray-100">
-              <h3 className="font-bold text-navy font-heading mb-3">Local Consultancies</h3>
-              <p className="text-sm text-red-600 font-medium font-body mb-2">Limited breadth and scale</p>
-              <p className="text-sm text-slate font-body leading-relaxed">Strong local knowledge but may lack the technical depth in international standards (IFRS S1/S2, IFC PS, CSRD) or the breadth to serve banks, DFIs, and governments simultaneously.</p>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-green/5 rounded-xl p-8 border border-green/20 text-center">
-            <h3 className="font-bold text-green font-heading text-lg mb-2">Volta Impact Advisors</h3>
-            <p className="text-slate font-body leading-relaxed max-w-2xl mx-auto">We combine the best of all worlds: deep Africa expertise, comprehensive international standards knowledge, full client-segment coverage, and affordable excellence. We go beyond reports to drive operational change.</p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Values */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="flex items-center gap-3 justify-center mb-4">
-              <div className="accent-line" />
-              <span className="text-green text-sm font-medium tracking-widest uppercase font-body">Our Values</span>
-              <div className="accent-line" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-heading">What drives us</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value) => (
-              <div key={value.title} className="service-card border border-gray-100">
-                <h3 className="font-bold text-navy font-heading mb-2">{value.title}</h3>
-                <p className="text-sm text-slate font-body leading-relaxed">{value.description}</p>
-              </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Values</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-16 max-w-lg">
+              What drives us.
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((v, i) => (
+              <FadeIn key={v.title} delay={i * 0.08}>
+                <div className="glass-card p-8 border border-gray-100 bg-white">
+                  <v.icon size={22} className="text-green mb-4" />
+                  <h3 className="font-heading font-bold text-navy text-base mb-2">{v.title}</h3>
+                  <p className="text-charcoal/40 text-sm font-body leading-relaxed">{v.desc}</p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-navy !py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading mb-4">Join us in shaping a sustainable future</h2>
-          <p className="text-gray-300 text-lg font-body mb-8">Whether you are a bank preparing for IFRS S1/S2, a DFI needing impact assessment, or a government designing climate programs — we are ready to help.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">Start a Conversation</Link>
-            <Link href="/services" className="btn-outline !border-white !text-white hover:!bg-white hover:!text-navy">Explore Services</Link>
-          </div>
+      <section className="bg-midnight relative overflow-hidden !py-28">
+        <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
+              Join us in shaping a sustainable future.
+            </h2>
+            <p className="text-white/40 text-lg font-body mb-10 max-w-md mx-auto">
+              Whether you are a bank, DFI, investor, or government — we are ready to help.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
+                Start a Conversation
+              </Link>
+              <Link href="/services" className="border border-white/20 text-white/70 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
+                Explore Services
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

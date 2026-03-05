@@ -1,99 +1,108 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/frameworks', label: 'Frameworks' },
+  { href: '/market-watch', label: 'Market Watch' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-midnight/97 backdrop-blur-sm shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-md bg-green flex items-center justify-center">
-              <span className="text-white font-extrabold text-sm font-heading tracking-tight">VIA</span>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-green flex items-center justify-center">
+              <span className="text-white font-extrabold text-[10px] font-heading tracking-tight">VIA</span>
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-white font-semibold text-base tracking-tight font-heading">Volta Impact</span>
-              <span className="text-green-light text-[10px] font-medium tracking-widest uppercase font-body">Advisors</span>
-            </div>
+            <span className={`font-semibold text-sm tracking-tight font-heading transition-colors duration-500 ${
+              scrolled ? 'text-navy' : 'text-white'
+            }`}>
+              Volta Impact Advisors
+            </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition font-body ${
+                className={`text-[13px] font-medium transition-colors duration-300 font-body ${
                   pathname === link.href
-                    ? 'text-green-light font-medium'
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-green'
+                    : scrolled ? 'text-charcoal/70 hover:text-charcoal' : 'text-white/70 hover:text-white'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="btn-primary text-sm !py-2.5 !px-6">
+            <Link href="/contact" className="bg-green text-white px-5 py-2 rounded-full text-[13px] font-medium font-body hover:bg-green-light transition-colors">
               Get in Touch
             </Link>
           </div>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-white"
+            className={`lg:hidden transition-colors ${scrolled ? 'text-navy' : 'text-white'}`}
             aria-label="Toggle menu"
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-              {menuOpen ? (
-                <path d="M6 6l12 12M6 18L18 6" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
+            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {menuOpen ? <path d="M5 5l10 10M5 15L15 5" /> : <path d="M3 6h14M3 10h14M3 14h14" />}
             </svg>
           </button>
         </div>
-
-        {/* Mobile menu */}
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? 'max-h-96 pb-4' : 'max-h-0'
-          }`}
-        >
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`text-sm py-2 font-body ${
-                  pathname === link.href
-                    ? 'text-green-light font-medium'
-                    : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="btn-primary text-sm text-center mt-2"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
       </div>
-    </nav>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100"
+          >
+            <div className="px-6 py-6 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-charcoal/70 hover:text-charcoal text-sm font-body"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link href="/contact" onClick={() => setMenuOpen(false)} className="bg-green text-white px-5 py-2.5 rounded-full text-sm font-medium text-center font-body">
+                Get in Touch
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }
