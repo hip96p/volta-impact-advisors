@@ -84,8 +84,8 @@ export default function ServicesPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-white/60 text-lg md:text-xl font-body font-light max-w-xl leading-relaxed mb-12">
-              Over 40 specialized services across 15+ international frameworks — organized by who we serve, adapted for Africa and emerging markets.
+            <p className="text-white/60 text-lg md:text-xl font-body font-light max-w-2xl leading-relaxed mb-12">
+              We serve the most important needs of the largest sustainability stakeholders in Africa and emerging markets — from the private sector champions to ambitious public entities and the critical actors that invest in and partner with them. Addressing all the major international frameworks, adapted for Africa and emerging markets realities and needs.
             </p>
           </FadeIn>
 
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-charcoal/70 font-body leading-[1.8] mb-16 max-w-3xl text-base md:text-[16px]">
+              <p className="text-charcoal/70 font-body leading-[1.8] mb-24 max-w-3xl text-base md:text-[16px]">
                 {segment.intro}
               </p>
             </FadeIn>

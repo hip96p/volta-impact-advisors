@@ -88,7 +88,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.8}>
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-4 mt-16">
               <Link href="/services" className="bg-green text-white px-7 py-3 rounded-md text-sm font-medium font-body hover:bg-green-light transition-all inline-flex items-center gap-2">
                 Our Services <ArrowRight size={15} />
               </Link>
