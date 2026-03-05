@@ -33,11 +33,9 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-16 md:h-[76px]">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className={`w-8 h-8 rounded-md flex items-center justify-center transition-all duration-500 ${
-              scrolled ? 'bg-green' : 'bg-green'
-            }`}>
+            <div className="w-8 h-8 rounded-md bg-green flex items-center justify-center">
               <span className="text-white font-extrabold text-[10px] font-heading tracking-tight">VIA</span>
             </div>
             <span className={`font-semibold text-sm tracking-tight font-heading transition-colors duration-500 ${

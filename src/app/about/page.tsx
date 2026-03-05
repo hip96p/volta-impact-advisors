@@ -7,7 +7,7 @@ import Counter from '@/components/Counter';
 
 const values = [
   { icon: Target, title: 'Context Over Templates', desc: 'We adapt global frameworks to local realities — because what works in London rarely works in Lagos without translation.' },
-  { icon: Shield, title: 'Impact That Counts', desc: 'Measurable, verifiable outcomes over checkbox compliance. We focus on what actually moves the needle.' },
+  { icon: Shield, title: 'Impact That Counts', desc: 'Measurable, verifiable outcomes over box-ticking exercises. We focus on what actually moves the needle.' },
   { icon: Lightbulb, title: 'Implementation First', desc: 'Operational execution, not shelf-ready reports. Our work is designed to be acted on immediately.' },
   { icon: Users, title: 'Integrity & Independence', desc: 'Honest, evidence-based advice with no conflicts. We tell you what you need to hear.' },
   { icon: Handshake, title: 'Collaborative Partnership', desc: 'We embed within your team as co-creators, building solutions together rather than delivering prescriptions.' },
@@ -18,7 +18,7 @@ const team = [
   {
     name: 'David Gavi',
     role: 'Founder & Managing Partner',
-    bio: 'Over 20 years of experience in ESG advisory, sustainable finance, and impact assessment across Africa and emerging markets. Previously held senior roles at leading DFIs and advisory firms. Specializes in PRB compliance, IFC Performance Standards, and climate finance strategy.',
+    bio: 'Over 20 years of experience in ESG advisory, sustainable finance, and impact assessment across Africa and emerging markets. Previously held senior roles at leading DFIs and advisory firms. Specializes in PRB implementation, performance standards, and climate finance strategy.',
     initials: 'DG',
   },
   {
@@ -42,7 +42,7 @@ export default function AboutPage() {
       <section className="relative min-h-[55vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-20 -right-20 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-10 -left-10 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 py-32">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">About Us</p>
           </FadeIn>
@@ -151,10 +151,10 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
             {values.map((v, i) => (
               <FadeIn key={v.title} delay={i * 0.08}>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-5">
                   <div className="w-10 h-10 rounded-lg bg-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <v.icon size={20} className="text-green" />
                   </div>

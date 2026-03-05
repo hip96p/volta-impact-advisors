@@ -119,27 +119,32 @@ const FALLBACK_NEWS: NewsItem[] = [
 ];
 
 export async function getNewsFeeds(): Promise<NewsItem[]> {
-  const feeds = await Promise.all([
-    fetchRSS('https://www.climatechangenews.com/feed/', 'Climate Home News'),
-    fetchRSS('https://www.afdb.org/en/news-and-events/rss', 'African Development Bank'),
-    fetchRSS('https://sdg.iisd.org/feed/', 'IISD SDG Knowledge Hub'),
-    fetchRSS('https://www.devex.com/news/rss', 'Devex'),
-  ]);
+  try {
+    const feeds = await Promise.all([
+      fetchRSS('https://www.climatechangenews.com/feed/', 'Climate Home News'),
+      fetchRSS('https://www.afdb.org/en/news-and-events/rss', 'African Development Bank'),
+      fetchRSS('https://sdg.iisd.org/feed/', 'IISD SDG Knowledge Hub'),
+      fetchRSS('https://www.devex.com/news/rss', 'Devex'),
+    ]);
 
-  // Flatten and sort by date (newest first)
-  const allItems = feeds.flat();
-  allItems.sort((a, b) => {
-    const dateA = a.pubDate ? new Date(a.pubDate).getTime() : 0;
-    const dateB = b.pubDate ? new Date(b.pubDate).getTime() : 0;
-    return dateB - dateA;
-  });
+    // Flatten and sort by date (newest first)
+    const allItems = feeds.flat();
+    allItems.sort((a, b) => {
+      const dateA = a.pubDate ? new Date(a.pubDate).getTime() : 0;
+      const dateB = b.pubDate ? new Date(b.pubDate).getTime() : 0;
+      return dateB - dateA;
+    });
 
-  const result = allItems.slice(0, 20);
+    const result = allItems.slice(0, 20);
 
-  // If RSS feeds returned nothing, use fallback curated news
-  if (result.length === 0) {
+    // If RSS feeds returned nothing, use fallback curated news
+    if (result.length === 0) {
+      return FALLBACK_NEWS;
+    }
+
+    return result;
+  } catch {
+    // If anything fails, always return fallback
     return FALLBACK_NEWS;
   }
-
-  return result;
 }

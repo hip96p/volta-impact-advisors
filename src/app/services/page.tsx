@@ -9,9 +9,9 @@ const segments = [
     id: 'banks',
     icon: Building2,
     title: 'Banks & Financial Institutions',
-    intro: 'Financial institutions face growing pressure to align with global sustainability frameworks while remaining competitive. We help banks integrate ESG into their core operations — from regulatory compliance and risk management to green bond issuance and climate finance mobilization. Our team has delivered PRB reporting, IFRS S1/S2 implementation, and climate risk stress testing for banks across West Africa, East Africa, and beyond.',
+    intro: 'Financial institutions face growing pressure to align with global sustainability frameworks while remaining competitive. We help banks integrate ESG into their core operations — from regulatory alignment and risk management to green bond issuance and climate finance mobilization. Our team has delivered PRB reporting, IFRS S1/S2 implementation, and climate risk stress testing for banks across West Africa, East Africa, and beyond.',
     buckets: [
-      { label: 'Regulatory & Reporting', items: 'PRB Compliance, IFRS S1/S2 Implementation, TCFD/TNFD Alignment, Taxonomy Alignment' },
+      { label: 'Regulatory & Reporting', items: 'PRB Implementation, IFRS S1/S2 Implementation, TCFD/TNFD Alignment, Taxonomy Alignment' },
       { label: 'Sustainable Finance', items: 'Green/Social/Sustainability Bond Frameworks, Bond Impact Reporting, Climate Finance Mobilization' },
       { label: 'Risk & Integration', items: 'ESG Risk Integration, Climate Risk Stress Testing' },
     ],
@@ -45,10 +45,10 @@ const segments = [
     id: 'development-finance',
     icon: Globe,
     title: 'Development Finance Institutions',
-    intro: 'Development finance institutions require robust environmental and social safeguards across their investment portfolios. We provide end-to-end E&S advisory — from pre-investment due diligence and IFC Performance Standards compliance to independent evaluations and resettlement planning. Our team has supported DFI-financed projects across infrastructure, energy, agribusiness, and financial intermediaries.',
+    intro: 'Development finance institutions require robust environmental and social safeguards across their investment portfolios. We provide end-to-end E&S advisory — from pre-investment due diligence and performance standards implementation to independent evaluations and resettlement planning. Our team has supported DFI-financed projects across infrastructure, energy, agribusiness, and financial intermediaries.',
     buckets: [
       { label: 'Assessment & Due Diligence', items: 'Impact Assessment (Ex-ante & Ex-post), E&S / ESIA Due Diligence, Lender-Grade E&S Assessment' },
-      { label: 'Compliance & Planning', items: 'IFC Performance Standards Gap Analysis, ESAP Development, Resettlement Action Plans, Biodiversity Action Plans' },
+      { label: 'Standards & Planning', items: 'Performance Standards Gap Analysis, ESAP Development, Resettlement Action Plans, Biodiversity Action Plans' },
       { label: 'Social & Evaluation', items: 'Gender & Social Inclusion Analysis, Stakeholder Engagement, Independent / Midterm Evaluation' },
     ],
     frameworks: ['IFC PS', 'CSRD / ESRS'],
@@ -74,7 +74,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-green -top-20 -right-20 absolute" />
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 py-32">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 pt-36 pb-24">
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">Services & Frameworks</p>
           </FadeIn>
