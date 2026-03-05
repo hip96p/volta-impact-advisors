@@ -61,7 +61,7 @@ export default function MarketWatchClient({ marketData, news }: Props) {
       <section className="relative bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-40 right-10 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-0 -left-10 absolute" />
-        <div className="via-container relative z-10 pt-48 pb-28">
+        <div className="via-container relative z-10" style={{ paddingTop: '200px', paddingBottom: '100px' }}>
           <FadeIn delay={0.2}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />

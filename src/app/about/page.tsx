@@ -42,7 +42,7 @@ export default function AboutPage() {
       <section className="relative bg-charcoal overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-20 -right-20 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-10 -left-10 absolute" />
-        <div className="via-container relative z-10 pt-48 pb-28">
+        <div className="via-container relative z-10" style={{ paddingTop: '200px', paddingBottom: '100px' }}>
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">About Us</p>
           </FadeIn>

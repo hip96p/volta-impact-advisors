@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="via-container relative z-10 pt-48 pb-28">
+        <div className="via-container relative z-10" style={{ paddingTop: '220px', paddingBottom: '120px' }}>
           <FadeIn delay={0.2}>
             <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
@@ -87,19 +87,8 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.8}>
-            <div className="flex flex-wrap gap-4 mt-14">
-              <Link href="/services" className="bg-green text-white px-7 py-3.5 rounded-md text-sm font-medium font-body hover:bg-green-light transition-all inline-flex items-center gap-2">
-                Our Services <ArrowRight size={15} />
-              </Link>
-              <Link href="/contact" className="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-md text-sm font-medium font-body hover:bg-white/20 transition-all">
-                Start a Conversation
-              </Link>
-            </div>
-          </FadeIn>
-
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-24 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-white/10" style={{ marginTop: '80px', paddingTop: '48px' }}>
             {[
               { target: 40, suffix: '+', label: 'Services' },
               { target: 15, suffix: '+', label: 'Frameworks' },
