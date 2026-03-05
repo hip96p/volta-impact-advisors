@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/frameworks', label: 'Frameworks' },
   { href: '/market-watch', label: 'Market Watch' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -33,9 +32,9 @@ export default function Navbar() {
         scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2.5">
             <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${
               scrolled ? 'bg-green' : 'bg-white/15 border border-white/20'
             }`}>

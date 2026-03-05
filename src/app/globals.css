@@ -51,27 +51,9 @@ html { scroll-behavior: smooth; }
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.12;
   pointer-events: none;
 }
-
-/* Glass card */
-.glass-card {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid #E5E7EB;
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.glass-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
-  border-color: rgba(9,129,74,0.25);
-}
-
-/* Minimal section spacing */
-section { padding: 100px 0; }
-@media (max-width: 768px) { section { padding: 64px 0; } }
 
 /* Subtle grid bg */
 .grid-bg {
@@ -80,3 +62,18 @@ section { padding: 100px 0; }
     linear-gradient(90deg, rgba(9,129,74,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+/* Glass card — used on Market Watch */
+.glass-card {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(9,129,74,0.2);
+}
+
+/* Section spacing — generous whitespace */
+section { padding: 120px 0; }
+@media (max-width: 768px) { section { padding: 72px 0; } }

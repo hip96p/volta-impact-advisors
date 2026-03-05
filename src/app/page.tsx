@@ -4,18 +4,36 @@ import Link from 'next/link';
 import { Building2, TrendingUp, Landmark, Globe, GraduationCap, ArrowRight, Shield, Target, Lightbulb, Users } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import Counter from '@/components/Counter';
+import RotatingText from '@/components/RotatingText';
 
 const segments = [
-  { icon: Building2, title: 'Banks', desc: 'PRB, IFRS S1/S2, green bonds, climate finance', href: '/services#banks', color: 'bg-blue-50 text-blue-600' },
-  { icon: TrendingUp, title: 'Investors', desc: 'Impact reports, ESG due diligence, validation', href: '/services#investors', color: 'bg-emerald-50 text-emerald-600' },
-  { icon: Landmark, title: 'Governments', desc: 'Climate strategy, program design, carbon markets', href: '/services#governments', color: 'bg-amber-50 text-amber-600' },
-  { icon: Globe, title: 'DFIs', desc: 'ESIA, impact assessment, IFC compliance', href: '/services#dfis', color: 'bg-purple-50 text-purple-600' },
-  { icon: GraduationCap, title: 'Everyone', desc: 'ESG training, EIA, carbon accounting, CSR', href: '/services#cross-cutting', color: 'bg-rose-50 text-rose-600' },
+  { icon: Building2, title: 'Banks', desc: 'PRB compliance, IFRS S1/S2, green bonds, climate finance, ESG risk integration.', href: '/services#banks' },
+  { icon: TrendingUp, title: 'Investors', desc: 'Impact measurement, ESG due diligence, portfolio integration, SDG alignment.', href: '/services#investors' },
+  { icon: Landmark, title: 'Governments', desc: 'National climate strategy, green taxonomy, carbon markets, just transition.', href: '/services#governments' },
+  { icon: Globe, title: 'DFIs', desc: 'ESIA, IFC compliance, impact assessment, resettlement planning.', href: '/services#dfis' },
+  { icon: GraduationCap, title: 'Cross-Cutting', desc: 'ESG training, carbon accounting, net-zero planning, EIA.', href: '/services#cross-cutting' },
 ];
 
-const frameworks = [
-  'IFRS S1/S2', 'CSRD/ESRS', 'PRB', 'IFC PS', 'TCFD', 'TNFD',
-  'SBTi', 'EU Taxonomy', 'GRI', 'CDP', 'PRI', 'NZAOA', 'UN Global Compact', 'ICMA',
+const caseStudies = [
+  {
+    tag: 'Banking',
+    title: 'PRB Reporting & Impact Analysis',
+    client: 'Leading West African Bank',
+    summary: 'Developed a comprehensive Principles for Responsible Banking framework, including impact analysis, target-setting, and first reporting cycle — enabling the bank to demonstrate alignment with the SDGs and Paris Agreement.',
+  },
+  {
+    tag: 'DFI / Climate Finance',
+    title: 'IFC Sustainable Finance & Paris Alignment',
+    client: 'International Finance Corporation',
+    summary: 'Supported IFC\'s Paris Alignment assessment for financial intermediary investments in Sub-Saharan Africa, evaluating climate risk exposure and developing actionable transition pathways for portfolio companies.',
+  },
+];
+
+const differentiators = [
+  { icon: Target, title: 'Implementation Focus', desc: 'We go beyond reports to embed real operational change.' },
+  { icon: Shield, title: 'Africa Expertise', desc: 'Deep local knowledge — not imported Western templates.' },
+  { icon: Lightbulb, title: 'Regulatory Bridge', desc: 'Translating global standards into local reality.' },
+  { icon: Users, title: 'Full Spectrum', desc: 'Banks, investors, DFIs, and governments under one roof.' },
 ];
 
 const logos = [
@@ -23,55 +41,47 @@ const logos = [
   'Africa Finance Corporation', 'Standard Chartered', 'Standard Bank', 'Citigroup', 'UBS',
 ];
 
-const differentiators = [
-  { icon: Target, title: 'Implementation Focus', desc: 'We go beyond reports to embed operational change across your organization.' },
-  { icon: Shield, title: 'Africa Expertise', desc: 'Deep local knowledge means solutions that actually work on the ground.' },
-  { icon: Lightbulb, title: 'Regulatory Bridge', desc: 'Translating complex global standards into practical local implementation.' },
-  { icon: Users, title: 'Full Spectrum', desc: 'One integrated practice serving banks, investors, DFIs, and governments.' },
-];
-
 export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
       <section className="relative min-h-[100vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
-        {/* Blobs */}
         <div className="gradient-blob w-[600px] h-[600px] bg-green -top-40 -right-40 absolute" />
         <div className="gradient-blob w-[400px] h-[400px] bg-teal bottom-0 -left-20 absolute" />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 py-32">
           <FadeIn delay={0.2}>
-            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-6 font-body">
+            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">
               ESG &middot; Impact &middot; Sustainability
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] mb-8 max-w-4xl">
-              Global standards.<br />
-              <span className="text-green-light">Local impact.</span>
+            <h1 className="text-white text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-bold leading-[1.05] mb-10 max-w-4xl">
+              Turning{' '}
+              <RotatingText
+                words={['impact', 'ESG', 'sustainability', 'CSR']}
+                className="text-green-light"
+              />{' '}
+              <br className="hidden md:block" />
+              into action.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="text-white/70 text-lg md:text-xl font-body font-light max-w-xl mb-12 leading-relaxed">
+            <p className="text-white/70 text-lg md:text-xl font-body font-light max-w-xl mb-14 leading-relaxed">
               Advisory for banks, investors, DFIs, and governments navigating ESG across Africa and emerging markets.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.8}>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/services" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
-                Explore Services
-              </Link>
-              <Link href="/contact" className="border border-white/30 text-white/90 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
-                Start a Conversation
-              </Link>
-            </div>
+            <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20 inline-block">
+              Start a Conversation
+            </Link>
           </FadeIn>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-28 pt-12 border-t border-white/10">
             {[
               { target: 40, suffix: '+', label: 'Services' },
               { target: 15, suffix: '+', label: 'Frameworks' },
@@ -93,7 +103,7 @@ export default function HomePage() {
 
       {/* ── LOGO TICKER ── */}
       <section className="bg-white !py-10 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-[11px] text-charcoal/50 tracking-[0.15em] uppercase mb-6 font-body">Our team has worked with</p>
           <div className="overflow-hidden">
             <div className="flex gap-16 items-center animate-scroll">
@@ -106,28 +116,30 @@ export default function HomePage() {
       </section>
 
       {/* ── WHO WE SERVE ── */}
-      <section className="bg-white grid-bg">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-white">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Who We Serve</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg">
-              Five client segments.<br />One integrated practice.
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Who We Serve</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg leading-tight">
+              Five client segments. One integrated practice.
             </h2>
-            <p className="text-charcoal/70 font-body max-w-lg mb-16 leading-relaxed">
+            <p className="text-charcoal/70 font-body max-w-2xl mb-20 leading-relaxed text-base">
               We deliver tailored advisory that bridges international sustainability standards with local African realities — helping each client segment navigate their specific ESG challenges with practical, implementable solutions.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="space-y-6">
             {segments.map((seg, i) => (
-              <FadeIn key={seg.title} delay={i * 0.1}>
-                <Link href={seg.href} className="glass-card p-6 group block border border-gray-100 bg-white">
-                  <div className={`w-10 h-10 rounded-xl ${seg.color} flex items-center justify-center mb-4`}>
-                    <seg.icon size={20} />
+              <FadeIn key={seg.title} delay={i * 0.08}>
+                <Link href={seg.href} className="flex items-start gap-6 p-6 rounded-2xl border border-gray-100 bg-white hover:border-green/20 hover:shadow-sm transition-all group">
+                  <div className="w-12 h-12 rounded-xl bg-green/5 flex items-center justify-center flex-shrink-0">
+                    <seg.icon size={22} className="text-green" />
                   </div>
-                  <h3 className="font-heading font-bold text-navy text-base mb-1.5">{seg.title}</h3>
-                  <p className="text-charcoal/60 text-[13px] font-body leading-relaxed mb-4">{seg.desc}</p>
-                  <ArrowRight size={14} className="text-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-heading font-bold text-navy text-lg mb-1">{seg.title}</h3>
+                    <p className="text-charcoal/60 text-sm font-body leading-relaxed">{seg.desc}</p>
+                  </div>
+                  <ArrowRight size={16} className="text-charcoal/20 group-hover:text-green transition-colors mt-1 flex-shrink-0" />
                 </Link>
               </FadeIn>
             ))}
@@ -137,47 +149,56 @@ export default function HomePage() {
 
       {/* ── WHY US ── */}
       <section className="bg-cream/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <FadeIn>
-                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Why Us</p>
-                <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 leading-tight">
-                  Not another Western template.
-                </h2>
-                <p className="text-charcoal/70 font-body leading-relaxed mb-12 max-w-md">
-                  Most ESG advisory firms apply the same Western playbooks everywhere. We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground — because different markets need different approaches.
-                </p>
-              </FadeIn>
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Why Us</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 leading-tight max-w-lg">
+              Not another Western template.
+            </h2>
+            <p className="text-charcoal/70 font-body leading-relaxed mb-20 max-w-2xl text-base">
+              Most ESG advisory firms apply the same playbooks everywhere. We combine deep Africa expertise with international standards knowledge to deliver solutions that work on the ground.
+            </p>
+          </FadeIn>
 
-              <div className="grid grid-cols-2 gap-8">
-                {differentiators.map((d, i) => (
-                  <FadeIn key={d.title} delay={i * 0.1}>
-                    <div>
-                      <d.icon size={20} className="text-green mb-3" />
-                      <h4 className="font-heading font-bold text-navy text-sm mb-1.5">{d.title}</h4>
-                      <p className="text-charcoal/60 text-[13px] font-body leading-relaxed">{d.desc}</p>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
-            </div>
-
-            <FadeIn direction="left">
-              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
-                <h3 className="text-sm font-heading font-bold text-navy mb-6 uppercase tracking-wider">Frameworks</h3>
-                <div className="flex flex-wrap gap-2.5">
-                  {frameworks.map((fw) => (
-                    <span key={fw} className="bg-green/5 text-green/80 border border-green/10 px-3.5 py-1.5 rounded-full text-[12px] font-medium font-body">
-                      {fw}
-                    </span>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {differentiators.map((d, i) => (
+              <FadeIn key={d.title} delay={i * 0.1}>
+                <div className="flex items-start gap-4">
+                  <d.icon size={22} className="text-green mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-heading font-bold text-navy text-base mb-1.5">{d.title}</h4>
+                    <p className="text-charcoal/60 text-sm font-body leading-relaxed">{d.desc}</p>
+                  </div>
                 </div>
-                <Link href="/frameworks" className="inline-flex items-center gap-2 text-green text-sm font-medium font-body mt-8 hover:gap-3 transition-all">
-                  Explore frameworks <ArrowRight size={14} />
-                </Link>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CASE STUDIES ── */}
+      <section className="bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Selected Work</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-20 max-w-lg leading-tight">
+              Impact in practice.
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {caseStudies.map((cs, i) => (
+              <FadeIn key={cs.title} delay={i * 0.1}>
+                <div className="border border-gray-100 rounded-2xl p-8 h-full flex flex-col">
+                  <span className="inline-block px-3 py-1 rounded-full text-[11px] font-medium font-body bg-green/5 text-green mb-5 self-start">
+                    {cs.tag}
+                  </span>
+                  <h3 className="font-heading font-bold text-navy text-xl mb-2">{cs.title}</h3>
+                  <p className="text-charcoal/50 text-[13px] font-body mb-4">{cs.client}</p>
+                  <p className="text-charcoal/60 text-sm font-body leading-relaxed flex-1">{cs.summary}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -185,22 +206,17 @@ export default function HomePage() {
       {/* ── CTA ── */}
       <section className="bg-midnight relative overflow-hidden !py-28">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
+            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-6">
               Ready to start?
             </h2>
-            <p className="text-white/60 text-lg font-body mb-10 max-w-md mx-auto">
+            <p className="text-white/60 text-lg font-body mb-12 max-w-md mx-auto leading-relaxed">
               From PRB compliance to impact assessment — let&apos;s talk about what you need.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
-                Get in Touch
-              </Link>
-              <Link href="/services" className="border border-white/30 text-white/80 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
-                View All Services
-              </Link>
-            </div>
+            <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20 inline-block">
+              Get in Touch
+            </Link>
           </FadeIn>
         </div>
       </section>

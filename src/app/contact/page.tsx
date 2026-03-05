@@ -1,26 +1,26 @@
 'use client';
 
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 
 export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
+      <section className="relative min-h-[45vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[400px] h-[400px] bg-green -top-20 right-20 absolute" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 py-32">
           <FadeIn delay={0.2}>
-            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-6 font-body">Get in Touch</p>
+            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">Get in Touch</p>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <h1 className="text-white text-5xl md:text-7xl font-heading font-bold leading-[1.05] mb-8 max-w-2xl">
+            <h1 className="text-white text-5xl md:text-7xl font-heading font-bold leading-[1.05] mb-10 max-w-2xl">
               Let&apos;s start a <span className="text-green-light">conversation.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-white/70 text-lg font-body font-light max-w-xl leading-relaxed">
-              From quick consultations to comprehensive engagements — we are ready to help.
+              Tell us about your ESG or sustainability challenge and we will get back to you.
             </p>
           </FadeIn>
         </div>
@@ -28,12 +28,12 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20">
             {/* Form */}
             <FadeIn className="lg:col-span-3">
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[13px] font-medium text-navy font-body mb-2">First Name *</label>
                     <input type="text" required className="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm focus:ring-2 focus:ring-green/20 focus:border-green outline-none transition bg-gray-50/50" />
@@ -44,7 +44,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[13px] font-medium text-navy font-body mb-2">Email *</label>
                     <input type="email" required className="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm focus:ring-2 focus:ring-green/20 focus:border-green outline-none transition bg-gray-50/50" />
@@ -70,7 +70,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-[13px] font-medium text-navy font-body mb-2">How can we help? *</label>
-                  <textarea required rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm focus:ring-2 focus:ring-green/20 focus:border-green outline-none transition resize-none bg-gray-50/50" placeholder="Tell us about your ESG or sustainability challenge..." />
+                  <textarea required rows={5} className="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm focus:ring-2 focus:ring-green/20 focus:border-green outline-none transition resize-none bg-gray-50/50" placeholder="Tell us about your ESG or sustainability challenge..." />
                 </div>
 
                 <button type="submit" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
@@ -81,43 +81,26 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <FadeIn delay={0.2} className="lg:col-span-2">
-              <div className="space-y-6">
-                <div className="glass-card p-6 border border-gray-100 bg-white">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-green/10 flex items-center justify-center">
-                      <Mail size={18} className="text-green" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-medium text-navy font-body">Email</p>
-                      <p className="text-sm text-charcoal/70 font-body">hello@voltaimpactadvisors.com</p>
-                    </div>
+              <div className="space-y-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <Mail size={18} className="text-green" />
+                    <p className="text-[13px] font-medium text-navy font-body">Email us directly</p>
                   </div>
-                  <p className="text-[12px] text-charcoal/50 font-body ml-[52px]">Serving clients across Africa and emerging markets</p>
+                  <p className="text-charcoal/70 text-sm font-body ml-[30px]">hello@voltaimpactadvisors.com</p>
                 </div>
 
-                <div className="bg-green/5 rounded-2xl p-6 border border-green/10">
-                  <h3 className="font-heading font-bold text-green text-sm mb-4">Quick Engagement Options</h3>
-                  <div className="space-y-4">
-                    {[
-                      { label: 'Discovery Call', desc: '30-min intro to discuss your needs and how we can help' },
-                      { label: 'Gap Assessment', desc: 'Rapid ESG posture assessment to identify priorities' },
-                      { label: 'Full Engagement', desc: 'Comprehensive advisory, tailored to your specific context' },
-                    ].map((opt) => (
-                      <div key={opt.label} className="flex items-start gap-3">
-                        <ArrowRight size={12} className="text-green mt-1 flex-shrink-0" />
-                        <div>
-                          <span className="text-navy text-sm font-medium font-body">{opt.label}</span>
-                          <span className="text-charcoal/60 text-sm font-body"> — {opt.desc}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <div className="border-t border-gray-100 pt-8">
+                  <p className="text-[12px] text-charcoal/40 font-body uppercase tracking-wider mb-4">Serving clients across</p>
+                  <p className="text-charcoal/70 text-sm font-body leading-relaxed">
+                    23+ countries across Africa and emerging markets — from South Africa and Nigeria to Kenya, Ghana, Ethiopia, and beyond.
+                  </p>
                 </div>
 
-                <div className="glass-card p-6 border border-gray-100 bg-white">
-                  <p className="text-[12px] text-charcoal/50 font-body uppercase tracking-wider mb-2">A Volta Partners Company</p>
-                  <p className="text-sm text-charcoal/70 font-body leading-relaxed">
-                    The dedicated ESG, impact, and sustainability practice of Volta Partners.
+                <div className="border-t border-gray-100 pt-8">
+                  <p className="text-[12px] text-charcoal/40 font-body uppercase tracking-wider mb-2">A Volta Partners Company</p>
+                  <p className="text-charcoal/60 text-sm font-body leading-relaxed">
+                    The dedicated ESG, impact, and sustainability advisory practice of Volta Partners.
                   </p>
                 </div>
               </div>

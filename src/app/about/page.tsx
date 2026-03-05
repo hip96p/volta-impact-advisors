@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Target, Shield, Lightbulb, Users, Handshake, BookOpen, Check, X } from 'lucide-react';
+import { Target, Shield, Lightbulb, Users, Handshake, BookOpen } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import Counter from '@/components/Counter';
 
@@ -9,30 +9,45 @@ const values = [
   { icon: Target, title: 'Context Over Templates', desc: 'We adapt global frameworks to local realities — because what works in London rarely works in Lagos without translation.' },
   { icon: Shield, title: 'Impact That Counts', desc: 'Measurable, verifiable outcomes over checkbox compliance. We focus on what actually moves the needle.' },
   { icon: Lightbulb, title: 'Implementation First', desc: 'Operational execution, not shelf-ready reports. Our work is designed to be acted on immediately.' },
-  { icon: Users, title: 'Integrity & Independence', desc: 'Honest, evidence-based advice with no conflicts. We tell you what you need to hear, not what you want to hear.' },
+  { icon: Users, title: 'Integrity & Independence', desc: 'Honest, evidence-based advice with no conflicts. We tell you what you need to hear.' },
   { icon: Handshake, title: 'Collaborative Partnership', desc: 'We embed within your team as co-creators, building solutions together rather than delivering prescriptions.' },
-  { icon: BookOpen, title: 'Knowledge Transfer', desc: 'Building local capacity, not dependency. Every engagement leaves your team stronger and more capable.' },
+  { icon: BookOpen, title: 'Knowledge Transfer', desc: 'Building local capacity, not dependency. Every engagement leaves your team stronger.' },
 ];
 
-const competitors = [
-  { label: 'Big Four', weakness: 'Expensive, slow, and generalist — applying the same template everywhere regardless of context.' },
-  { label: 'Global ESG Specialists', weakness: 'Western-centric frameworks that miss the nuances of African markets and institutions.' },
-  { label: 'Local Consultancies', weakness: 'Limited breadth and scale — deep in one area but lacking the full-spectrum capability needed.' },
+const team = [
+  {
+    name: 'David Gavi',
+    role: 'Founder & Managing Partner',
+    bio: 'Over 20 years of experience in ESG advisory, sustainable finance, and impact assessment across Africa and emerging markets. Previously held senior roles at leading DFIs and advisory firms. Specializes in PRB compliance, IFC Performance Standards, and climate finance strategy.',
+    initials: 'DG',
+  },
+  {
+    name: 'Dolapo Fasawe',
+    role: 'Partner, Strategy & Operations',
+    bio: 'Extensive experience in strategy consulting and operations across West Africa. Specializes in ESG integration for financial institutions, corporate sustainability strategy, and organizational transformation.',
+    initials: 'DF',
+  },
+  {
+    name: 'Tobi Adesanya',
+    role: 'Partner, Renewable Energy & Climate',
+    bio: 'Deep expertise in renewable energy project development, climate finance, and energy transition across Sub-Saharan Africa. Focuses on carbon markets, clean energy investment, and just transition planning.',
+    initials: 'TA',
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
+      <section className="relative min-h-[60vh] flex items-center bg-midnight overflow-hidden !pt-0 !pb-0">
         <div className="gradient-blob w-[500px] h-[500px] bg-teal -top-20 -right-20 absolute" />
         <div className="gradient-blob w-[300px] h-[300px] bg-green bottom-10 -left-10 absolute" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 py-32">
           <FadeIn delay={0.2}>
-            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-6 font-body">About Us</p>
+            <p className="text-green-light text-sm font-medium tracking-[0.2em] uppercase mb-8 font-body">About Us</p>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <h1 className="text-white text-5xl md:text-7xl font-heading font-bold leading-[1.05] mb-8 max-w-3xl">
+            <h1 className="text-white text-5xl md:text-7xl font-heading font-bold leading-[1.05] mb-10 max-w-3xl">
               Where global expertise meets <span className="text-green-light">African reality.</span>
             </h1>
           </FadeIn>
@@ -46,34 +61,34 @@ export default function AboutPage() {
 
       {/* Mission / Approach */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
             <FadeIn>
               <div>
-                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Mission</p>
+                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Mission</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6">
                   Leading ESG advisory for emerging markets.
                 </h2>
-                <p className="text-charcoal/70 font-body leading-relaxed">
+                <p className="text-charcoal/70 font-body leading-relaxed text-base">
                   We bridge the gap between global ESG frameworks and local implementation — serving banks, investors, DFIs, and governments with practical, actionable solutions that drive measurable impact across Africa and beyond.
                 </p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div>
-                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Approach</p>
+                <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Approach</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6">
                   Different markets need different solutions.
                 </h2>
-                <p className="text-charcoal/70 font-body leading-relaxed">
+                <p className="text-charcoal/70 font-body leading-relaxed text-base">
                   Data gaps, institutional contexts, and stakeholder dynamics in emerging markets demand localized expertise — not off-the-shelf Western playbooks. We bring the contextual understanding that makes the difference between a report and real change.
                 </p>
               </div>
             </FadeIn>
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-gray-100">
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-24 pt-12 border-t border-gray-100">
             {[
               { target: 20, suffix: '+', label: 'Years Experience' },
               { target: 23, suffix: '', label: 'Countries Served' },
@@ -93,67 +108,58 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Gap We Fill */}
-      <section className="bg-cream/50 grid-bg">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Team */}
+      <section className="bg-cream/50">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">The Gap We Fill</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg">
-              Why existing options fall short.
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Team</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 leading-tight max-w-lg">
+              The people behind the practice.
             </h2>
-            <p className="text-charcoal/70 font-body leading-relaxed max-w-2xl mb-16">
-              The ESG advisory landscape in Africa is fragmented. Big firms bring global templates without local context, while local consultancies lack the breadth to cover the full spectrum of frameworks and standards. We built Volta Impact Advisors to fill this gap.
+            <p className="text-charcoal/70 font-body leading-relaxed max-w-2xl mb-20 text-base">
+              Our leadership brings decades of hands-on experience across ESG advisory, sustainable finance, renewable energy, and impact assessment in Africa and emerging markets.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {competitors.map((c, i) => (
-              <FadeIn key={c.label} delay={i * 0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {team.map((member, i) => (
+              <FadeIn key={member.name} delay={i * 0.1}>
                 <div className="bg-white rounded-2xl p-8 border border-gray-100">
-                  <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mb-4">
-                    <X size={16} className="text-red-400" />
+                  <div className="w-16 h-16 rounded-full bg-midnight flex items-center justify-center mb-6">
+                    <span className="text-green-light font-heading font-bold text-lg">{member.initials}</span>
                   </div>
-                  <h3 className="font-heading font-bold text-navy mb-2">{c.label}</h3>
-                  <p className="text-charcoal/60 text-sm font-body leading-relaxed">{c.weakness}</p>
+                  <h3 className="font-heading font-bold text-navy text-lg mb-1">{member.name}</h3>
+                  <p className="text-green text-[13px] font-medium font-body mb-4">{member.role}</p>
+                  <p className="text-charcoal/60 text-sm font-body leading-relaxed">{member.bio}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
-
-          <FadeIn delay={0.3}>
-            <div className="bg-green/5 rounded-2xl p-8 border border-green/15 flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check size={16} className="text-green" />
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-green mb-1">Volta Impact Advisors</h3>
-                <p className="text-charcoal/70 text-sm font-body leading-relaxed">Deep Africa expertise + international standards knowledge + full client coverage + affordable excellence.</p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
       {/* Values */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-3 font-body">Our Values</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg">
+            <p className="text-green text-sm font-medium tracking-[0.15em] uppercase mb-4 font-body">Our Values</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading mb-6 max-w-lg leading-tight">
               What drives us.
             </h2>
-            <p className="text-charcoal/70 font-body leading-relaxed max-w-2xl mb-16">
+            <p className="text-charcoal/70 font-body leading-relaxed max-w-2xl mb-20 text-base">
               Every engagement we take on is guided by these principles. They shape how we work, who we hire, and the kind of impact we strive to create.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {values.map((v, i) => (
               <FadeIn key={v.title} delay={i * 0.08}>
-                <div className="glass-card p-8 border border-gray-100 bg-white">
-                  <v.icon size={22} className="text-green mb-4" />
-                  <h3 className="font-heading font-bold text-navy text-base mb-2">{v.title}</h3>
-                  <p className="text-charcoal/60 text-sm font-body leading-relaxed">{v.desc}</p>
+                <div className="flex items-start gap-4">
+                  <v.icon size={22} className="text-green mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-heading font-bold text-navy text-base mb-1.5">{v.title}</h3>
+                    <p className="text-charcoal/60 text-sm font-body leading-relaxed">{v.desc}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -164,22 +170,17 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="bg-midnight relative overflow-hidden !py-28">
         <div className="gradient-blob w-[500px] h-[500px] bg-green top-0 right-0 absolute" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-5">
+            <h2 className="text-3xl md:text-5xl font-bold text-white font-heading mb-6">
               Join us in shaping a sustainable future.
             </h2>
-            <p className="text-white/60 text-lg font-body mb-10 max-w-md mx-auto">
+            <p className="text-white/60 text-lg font-body mb-12 max-w-md mx-auto leading-relaxed">
               Whether you are a bank, DFI, investor, or government — we are ready to help.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20">
-                Start a Conversation
-              </Link>
-              <Link href="/services" className="border border-white/30 text-white/80 px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-white/10 transition-all">
-                Explore Services
-              </Link>
-            </div>
+            <Link href="/contact" className="bg-green text-white px-8 py-3.5 rounded-full text-sm font-medium font-body hover:bg-green-light transition-all hover:shadow-lg hover:shadow-green/20 inline-block">
+              Start a Conversation
+            </Link>
           </FadeIn>
         </div>
       </section>
